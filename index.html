@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Tech Gal | Precision Technology Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #FDFBF7;
+            --charcoal: #1E2222;
+            --muted-gold: #C5A880;
+            --text-dark: #2A2E2E;
+            --text-light: #F4F1EA;
+            --serif: 'Playfair Display', serif;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-radius: 4px !important; /* Subtle premium curve vs aggressive hard edges */
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 6%;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        header {
+            height: 85vh;
+            background: linear-gradient(rgba(30, 34, 34, 0.4), rgba(30, 34, 34, 0.6)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            color: var(--text-light);
+        }
+
+        .hero-content h1 {
+            font-family: var(--serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--muted-gold);
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--text-light);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* About / Philosophy Section */
+        .philosophy {
+            padding: 8rem 6%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .philosophy blockquote {
+            font-family: var(--serif);
+            font-size: 2.2rem;
+            font-style: italic;
+            color: var(--charcoal);
+            line-height: 1.4;
+            margin-bottom: 2.5rem;
+        }
+
+        .philosophy p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #505555;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 2rem 6% 6rem 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--serif);
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid #ECE9E2;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-body {
+            padding: 2.5rem 2rem;
+        }
+
+        .service-body h3 {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .service-body p {
+            font-size: 0.95rem;
+            color: #555A5A;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--muted-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: 0.2rem;
+        }
+
+        /* Form & Contact Section */
+        .contact-container {
+            background-color: #F4F1EA;
+            padding: 6rem 6%;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-weight: 300;
+            color: #555A5A;
+            margin-bottom: 3rem;
+        }
+
+        .info-details {
+            margin-bottom: 2rem;
+        }
+
+        .info-details h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted-gold);
+            margin-bottom: 0.4rem;
+        }
+
+        .info-details p {
+            font-size: 1rem;
+            color: var(--charcoal);
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        /* Premium Form Styling */
+        .brand-contact-form {
+            background: #FFFFFF;
+            padding: 3rem;
+            border: 1px solid #ECE9E2;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-field label {
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--charcoal);
+        }
+
+        .form-field input, .form-field select, .form-field textarea {
+            padding: 14px;
+            border: 1px solid #DCD8CD;
+            outline: none;
+            background: #FFF;
+            font-family: var(--sans);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+            border-color: var(--muted-gold);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .radio-label {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .radio-label input {
+            accent-color: var(--muted-gold);
+        }
+
+        .submit-btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--text-light);
+            padding: 3rem 6%;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        footer span {
+            color: var(--muted-gold);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .philosophy blockquote { font-size: 1.8rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            header { height: 70vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SB Tech Gal</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#inquire">Inquire</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1>Save money, protect our coastal community.</h1>
+            <p>Choose meticulous repair over premium replacement infrastructure.</p>
+            <a href="#inquire" class="btn">Request Private Consultation</a>
+        </div>
+    </header>
+
+    <section class="philosophy" id="about">
+        <blockquote>
+            "Choose repair over replacement."
+        </blockquote>
+        <p>Precision technology support for Santa Barbara and Montecito. Expert computer and printer repair solutions designed to extend the lifespan of your equipment and keep your essential operations running without interruption. I provide the technical care to preserve the integrity of your essential systems, ensuring your digital estate operates with absolute fluidity, discretion, and peak performance.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Curated Infrastructure Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Macbook and iMac Repair" class="service-img">
+                <div class="service-body">
+                    <h3>Device & System Care</h3>
+                    <p>Hardware, networking, operating systems, and software—including printers. I fix it right the first time to safely extend the operational life of your premium devices.</p>
+                    <ul class="service-list">
+                        <li>Component diagnostics & replacement</li>
+                        <li>Wi-Fi optimization & network repairs</li>
+                        <li>Printer and accessory eco-system setup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=600&q=80" alt="Hardware Upgrades" class="service-img">
+                <div class="service-body">
+                    <h3>Security & Asset Assurance</h3>
+                    <p>Comprehensive threat mitigation and proactive privacy protection configuration tailored intentionally for private family offices and estate operations.</p>
+                    <ul class="service-list">
+                        <li>Digital discretion & asset protection</li>
+                        <li>Full-property continuous network blankets</li>
+                        <li>High-speed SSD & memory engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="AI Workflow Consulting" class="service-img">
+                <div class="service-body">
+                    <h3>AI Workflow Consulting</h3>
+                    <p>Architecting secure, intelligent, automated operational structures to eliminate daily technical friction and elevate elite lifestyle productivity.</p>
+                    <ul class="service-list">
+                        <li>Workflow automation & bottleneck audits</li>
+                        <li>Tailored secure local AI tool integration</li>
+                        <li>Performance & high-efficiency staff training</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-container" id="inquire">
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <h2>Begin Your Consultation</h2>
+                <p>Every relationship begins with a private conversation regarding your operational constraints. Reach out directly or complete the intake brief.</p>
+                
+                <div class="info-details">
+                    <h4>Direct Contact</h4>
+                    <p>Call or Text: 805-225-7885</p>
+                    <p>Maggie@thesbtechgal.com</p>
+                </div>
+
+                <div class="info-details">
+                    <h4>Availability</h4>
+                    <p>Monday - Sunday: 8:00 AM - 6:00 PM</p>
+                </div>
+
+                <div class="info-details">
+                    <h4>Primary Coverage Zone</h4>
+                    <p>Serving the Central Coast from Santa Maria to Oxnard, with focused estate operations in Santa Barbara and Montecito.</p>
+                </div>
+
+                <div class="info-details">
+                    <h4>Corporate Headquarters</h4>
+                    <p>Downtown Santa Barbara (Consultations strictly by advance coordination)</p>
+                </div>
+            </div>
+
+            <div>
+                <form action="https://formspree.io/f/your-id" method="POST" class="brand-contact-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Your Email Address</label>
+                            <input type="email" name="email" required placeholder="name@domain.com">
+                        </div>
+                        <div class="form-field">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="805-XXX-XXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Preferred Contact Method</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="contact_preference" value="email" checked> Email</label>
+                            <label class="radio-label"><input type="radio" name="contact_preference" value="text"> Text / SMS</label>
+                            <label class="radio-label"><input type="radio" name="contact_preference" value="call"> Voice Call</label>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Logistics Layout Preference</label>
+                        <select name="service_location" required>
+                            <option value="pickup" selected>Secure Device Pickup (Recommended / Most Convenient)</option>
+                            <option value="home-visit">On-Site Residential Support (Estate Visit)</option>
+                            <option value="office-visit">On-Site Commercial Support (Business Visit)</option>
+                            <option value="remote">Remote Digital Support (Online Security Consultation)</option>
+                            <option value="downtown-office">Meet at Downtown Office (By Appointment Only)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label>System Constraints / Specific Symptoms</label>
+                        <textarea name="description" rows="4" required placeholder="Please provide model details or structural disruptions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">Submit Request</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        Strict Privacy Preserved • <span>By Appointment Only</span> • Santa Barbara, California
+    </footer>
+
+</body>
+</html>
