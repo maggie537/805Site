@@ -498,8 +498,7 @@
                         <textarea name="description" rows="4" required placeholder="Please provide model details or structural disruptions..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn submit-btn">Submit Request</button>
-                </form>
+                    <button type="button" class="btn submit-btn" onclick="window.formSubmitClicked=true; this.form.submit();">Submit Request</button>                </form>
 <script>
     const form = document.getElementById("ajax-form");
     
