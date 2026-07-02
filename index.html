@@ -34,6 +34,21 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Tile Accent Border */
+.tile-divider {
+    height: 12px;
+    background-color: var(--cobalt);
+    /* Creates a beautiful geometric pattern mimicking Spanish tile mosaics using CSS gradients */
+    background-image: 
+        linear-gradient(45deg, var(--terracotta) 25%, transparent 25%, transparent 75%, var(--terracotta) 75%, var(--terracotta)),
+        linear-gradient(45deg, var(--terracotta) 25%, var(--bg-cream) 25%, var(--bg-cream) 75%, var(--terracotta) 75%, var(--terracotta));
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
+    border-top: 2px solid var(--cobalt);
+    border-bottom: 2px solid var(--cobalt);
+    opacity: 0.85;
+}
+        
         /* Navigation */
         nav {
             display: flex;
