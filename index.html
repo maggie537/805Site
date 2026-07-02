@@ -36,17 +36,22 @@
 
         /* Tile Accent Border */
 .tile-divider {
-    height: 12px;
-    background-color: var(--cobalt);
-    /* Creates a beautiful geometric pattern mimicking Spanish tile mosaics using CSS gradients */
+    height: 14px;
+    width: 100%;
+    display: block;
+    background-color: var(--charcoal); /* Your new Cobalt Blue */
+    
+    /* This draws the mosaic geometry using your original variable names */
     background-image: 
-        linear-gradient(45deg, var(--terracotta) 25%, transparent 25%, transparent 75%, var(--terracotta) 75%, var(--terracotta)),
-        linear-gradient(45deg, var(--terracotta) 25%, var(--bg-cream) 25%, var(--bg-cream) 75%, var(--terracotta) 75%, var(--terracotta));
+        linear-gradient(45deg, var(--muted-gold) 25%, transparent 25%, transparent 75%, var(--muted-gold) 75%, var(--muted-gold)),
+        linear-gradient(45deg, var(--muted-gold) 25%, var(--bg-cream) 25%, var(--bg-cream) 75%, var(--muted-gold) 75%, var(--muted-gold));
+    
     background-size: 24px 24px;
     background-position: 0 0, 12px 12px;
-    border-top: 2px solid var(--cobalt);
-    border-bottom: 2px solid var(--cobalt);
-    opacity: 0.85;
+    border-top: 2px solid var(--charcoal);
+    border-bottom: 2px solid var(--charcoal);
+    opacity: 0.9;
+    margin: 3rem 0; /* Adds nice spacing above and below the divider */
 }
         
         /* Navigation */
