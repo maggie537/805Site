@@ -64,10 +64,11 @@
             font-weight: 500;
         }
 
-        /* Hero Section */
+       /* Hero Section */
         header {
             height: 85vh;
-            background: linear-gradient(rgba(30, 34, 34, 0.4), rgba(30, 34, 34, 0.6)), 
+            /* FIX: Increased the overlay opacity from 0.4/0.6 to 0.68/0.88 to darken the keyboard */
+            background: linear-gradient(rgba(30, 34, 34, 0.68), rgba(30, 34, 34, 0.88)), 
                         url('my-background.png') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -87,6 +88,8 @@
             font-weight: 400;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            /* PRO-TIP: Adds a soft shadow behind the white letters to pop them off the background */
+            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .hero-content p {
