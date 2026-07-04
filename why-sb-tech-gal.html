@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why SB Tech Gal | Premium IT Credentials & Philosophy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --slate-charcoal: #2A2F35; 
+            --sea-glass: #5A7E7A;       
+            --montecito-sand: #F9F6F0;  
+            --pure-white: #FFFFFF;
+            --border-gold: #D4AF37;     
+            --muted-gray: #718096;
+            
+            --serif-font: 'Cormorant Garamond', Georgia, serif;
+            --sans-font: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: var(--slate-charcoal);
+            background-color: var(--pure-white);
+            font-family: var(--sans-font);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        .top-accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--sea-glass), var(--border-gold));
+        }
+
+        header {
+            background-color: var(--pure-white);
+            border-bottom: 1px solid #ECE7E1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--slate-charcoal);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--sea-glass);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--slate-charcoal);
+            margin-left: 30px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sea-glass);
+        }
+
+        .cta-btn-nav {
+            border: 1px solid var(--slate-charcoal);
+            padding: 10px 24px;
+            font-size: 11px !important;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-nav:hover {
+            background-color: var(--slate-charcoal);
+            color: var(--pure-white);
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .intro-box h1 {
+            font-family: var(--serif-font);
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .intro-box p {
+            font-size: 18px;
+            font-weight: 300;
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .credentials-header {
+            font-family: var(--serif-font);
+            font-size: 32px;
+            font-weight: 400;
+            margin: 60px 0 30px 0;
+            border-bottom: 1px solid #ECE7E1;
+            padding-bottom: 15px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .cert-card {
+            background-color: var(--montecito-sand);
+            padding: 35px 30px;
+            border-left: 3px solid var(--border-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+        }
+
+        .cert-card h3 {
+            font-family: var(--serif-font);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--slate-charcoal);
+            margin-bottom: 10px;
+        }
+
+        .cert-card p {
+            font-size: 14px;
+            color: var(--muted-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .back-home-box {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--sea-glass);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--slate-charcoal);
+        }
+
+        footer {
+            background-color: #1F2326;
+            color: #9299A2;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 13px;
+            border-top: 1px solid #2D3237;
+            letter-spacing: 1px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; padding: 20px; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            .intro-box h1 { font-size: 36px; }
+            .main-content { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-accent-bar"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <nav>
+                <a href="/#estate-services">Residential</a>
+                <a href="/#commercial-services">Commercial</a>
+                <a href="/#sustainability-craft">Repair & Builds</a>
+                <a href="#" style="color: var(--sea-glass);">Why SB Tech Gal</a>
+                <a href="/#concierge" class="cta-btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="intro-box">
+            <h1>The Standard of Expertise Your Infrastructure Deserves.</h1>
+            <p>In high-stakes personal and professional environments, relying on unverified generalists exposes your operations to significant data risks. I match my operational discipline with rigorous, industry-recognized credentials to deliver top-tier cybersecurity and systems architecture right to your workspace.</p>
+            <p>My methodologies closely align with federal cybersecurity standards to establish resilient operational postures that confidently minimize risks and stand up to strict compliance audits.</p>
+        </div>
+
+        <h2 class="credentials-header">Validated Technical Credentials</h2>
+        
+        <div class="cert-grid">
+            <div class="cert-card">
+                <h3>CompTIA Security+ Certified</h3>
+                <p>Defensive Architecture, Identity Management & Incident Response</p>
+            </div>
+            <div class="cert-card">
+                <h3>CompTIA Network+ Certified</h3>
+                <p>Infrastructure Design, Routing, & Network Segmentation</p>
+            </div>
+            <div class="cert-card">
+                <h3>CompTIA A+ Certified</h3>
+                <p>Hardware Architecture, Endpoint Troubleshooting & OS Lifecycle Logistics</p>
+            </div>
+        </div>
+
+        <div class="back-home-box">
+            <a href="/" class="back-link">← Return to Home Ecosystem</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
