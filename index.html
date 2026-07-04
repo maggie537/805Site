@@ -498,7 +498,8 @@
             <a href="#" class="logo">Santa Barbara <span>Tech Gal</span></a>
             <nav>
                 <a href="#estate-services">Residential</a>
-                <a href="#commercial-services">Commerical</a>
+                <a href="#commercial-services">Commercial</a>
+                <a href="#sustainability-craft">Repair & Builds</a>
                 <a href="#curriculum">Why SB Tech Gal</a>
                 <a href="#concierge" class="cta-btn-nav">Contact Us</a>
             </nav>
@@ -661,6 +662,37 @@
         </div>
     </section>
 
+    <section id="sustainability-craft" class="bg-linen">
+        <div class="section-container">
+            <div class="section-header-box">
+                <h2 class="section-title">Sustainability & Craftsmanship</h2>
+                <p class="section-subtitle">A mindful approach to technology architecture—extending the lifecycle of your devices and custom building for your specific space.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+                <div class="editorial-card">
+                    <h3>Why Choose Repair?</h3>
+                    <p style="margin-bottom: 20px; color: #4A5568; font-weight: 300; font-size: 15px;">Many people assume a slow laptop or a machine that won't power on belongs in the trash. In reality, most issues are completely fixable. It always pays to ask an expert before discarding an entire device.</p>
+                    <ul>
+                        <li><strong>Substantial Financial Savings:</strong> Component repairs or simple hardware upgrades cost a fraction of purchasing a brand-new machine.</li>
+                        <li><strong>E-Waste Mitigation:</strong> Repairing tech keeps dangerous chemicals and heavy metals out of local California landfills.</li>
+                        <li><strong>Zero Data Friction:</strong> Avoid the massive headache of data migration; keep your files and configurations exactly where they are.</li>
+                    </ul>
+                </div>
+
+                <div class="editorial-card" style="border-top-color: var(--border-gold);">
+                    <h3>Boutique Custom Builds</h3>
+                    <p style="margin-bottom: 20px; color: #4A5568; font-weight: 300; font-size: 15px;">Elevate your home or business workspace with personalized machinery. We design bespoke desktop computers and fine-tune premium mechanical keyboards from the ground up.</p>
+                    <ul>
+                        <li><strong>Architectural Aesthetics:</strong> Say goodbye to boring black plastic. Every build is curated to seamlessly complement your interior styling.</li>
+                        <li><strong>Purpose-Driven Power:</strong> Zero bloated software. High-quality parts selected explicitly for your daily workflow demands.</li>
+                        <li><strong>Tactile Ergonomics:</strong> Keyboards engineered with customized acoustic sound profiles and exact switch typing weights.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
   <footer>
         <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
         <p style="margin-top: 12px; font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
@@ -692,8 +724,6 @@
                     status.style.backgroundColor = "#1F2326"; 
                     status.style.color = "#F9F6F0";
                     form.reset(); 
-                    // Optional redirect trigger alternative:
-                    // window.location.href = form.querySelector('input[name="_next"]').value;
                 } else {
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
