@@ -262,65 +262,6 @@
             background-color: var(--montecito-sand);
         }
 
-        /* Balanced Asymmetric About Profile Section */
-        .about-banner {
-            background-color: var(--slate-charcoal);
-            color: var(--pure-white);
-            padding: 100px 40px;
-        }
-
-        .about-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-family: var(--serif-font);
-            font-size: 42px;
-            font-weight: 400;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .about-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            opacity: 0.85;
-            font-weight: 300;
-            margin-bottom: 25px;
-        }
-
-        .cert-cluster {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .badge-luxury {
-            border-left: 2px solid var(--border-gold);
-            padding-left: 20px;
-        }
-
-        .badge-luxury h4 {
-            font-family: var(--serif-font);
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            color: var(--montecito-sand);
-        }
-
-        .badge-luxury p {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--sea-glass);
-            margin-top: 4px;
-        }
-
         /* Clean Luxury Contact Infrastructure */
         .contact-section {
             max-width: 700px;
@@ -419,13 +360,6 @@
         }
 
         /* Mobile Scale Responsiveness Engine */
-        @media (max-width: 900px) {
-            .about-grid { 
-                grid-template-columns: 1fr; 
-                gap: 40px; 
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-container { 
                 flex-direction: column; 
@@ -500,7 +434,7 @@
                 <a href="#estate-services">Residential</a>
                 <a href="#commercial-services">Commercial</a>
                 <a href="#sustainability-craft">Repair & Builds</a>
-                <a href="#curriculum">Why SB Tech Gal</a>
+                <a href="why-sb-tech-gal.html">Why SB Tech Gal</a>
                 <a href="#concierge" class="cta-btn-nav">Contact Us</a>
             </nav>
         </div>
@@ -636,30 +570,6 @@
 
             <button type="submit" class="submit-btn">Submit Request</button>
         </form>
-    </section>
-
-    <section id="curriculum" class="about-banner">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>The Standard of Expertise Your Infrastructure Deserves.</h2>
-                <p>In high-stakes personal and professional environments, relying on unverified generalists exposes your operations to significant data risks. I match my operational discipline with rigorous, industry-recognized credentials to deliver top-tier cybersecurity and systems architecture right to your workspace.</p>
-                <p>My methodologies closely align with federal cybersecurity standards to establish resilient operational postures that confidently minimize risks and stand up to strict compliance audits.</p>
-            </div>
-            <div class="cert-cluster">
-                <div class="badge-luxury">
-                    <h4>CompTIA Security+ Certified</h4>
-                    <p>Defensive Architecture, Identity Management & Incident Response</p>
-                </div>
-                <div class="badge-luxury">
-                    <h4>CompTIA Network+ Certified</h4>
-                    <p>Infrastructure Design, Routing, & Network Segmentation</p>
-                </div>
-                <div class="badge-luxury">
-                    <h4>CompTIA A+ Certified</h4>
-                    <p>Hardware Architecture, Endpoint Troubleshooting & OS Lifecycle Logistics</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="sustainability-craft" class="bg-linen">
