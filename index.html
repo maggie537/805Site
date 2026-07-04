@@ -62,14 +62,15 @@
         }
 
         .logo {
-    font-family: var(--serif-font);
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--slate-charcoal);
-    text-decoration: none;
-    letter-spacing: 1px;
-    white-space: nowrap; /* Prevents the logo from splitting */
-}
+            font-family: var(--serif-font);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--slate-charcoal);
+            text-decoration: none;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
         .logo span {
             color: var(--sea-glass);
             font-weight: 400;
@@ -210,6 +211,7 @@
             font-weight: 300;
         }
 
+        /* Standard Grid for Commercial Section */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -225,11 +227,11 @@
         }
 
         .pillar-card {
-    background: transparent !important;
-    border-top: none !important;
-    box-shadow: none !important;
-    padding: 20px 10px !important;
-}
+            background: transparent !important;
+            border-top: none !important;
+            box-shadow: none !important;
+            padding: 20px 10px !important;
+        }
 
         .editorial-card:hover {
             transform: translateY(-4px);
@@ -365,7 +367,110 @@
             letter-spacing: 1px;
         }
 
-        /* Mobile Scale Responsiveness Engine */
+        /* Premium Estate Split Layout Engine */
+        .estate-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .estate-visual-column {
+            position: sticky;
+            top: 140px;
+            text-align: center;
+        }
+
+        .tile-wrapper {
+            background-color: var(--montecito-sand);
+            padding: 40px;
+            border: 1px solid #ECE7E1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            display: inline-block;
+        }
+
+        .brand-tile-art {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .tile-caption {
+            font-family: var(--serif-font);
+            font-style: italic;
+            font-size: 16px;
+            color: var(--sea-glass);
+            margin-top: 20px;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .section-header-left {
+            margin-bottom: 40px;
+        }
+
+        .section-header-left .section-title {
+            text-align: left;
+        }
+
+        .estate-pillars-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+        }
+
+        .estate-pillar-item h3 {
+            font-family: var(--serif-font);
+            font-size: 26px;
+            color: var(--slate-charcoal);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ECE7E1;
+            padding-bottom: 8px;
+        }
+
+        .estate-pillar-item ul {
+            list-style: none;
+        }
+
+        .estate-pillar-item ul li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #4A5568;
+            position: relative;
+            padding-left: 24px;
+            font-weight: 300;
+        }
+
+        .estate-pillar-item ul li::before {
+            content: "—";
+            color: var(--border-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        .estate-cta-wrapper {
+            margin-top: 50px;
+        }
+
+        /* Responsive Mobile Layout Engine */
+        @media (max-width: 992px) {
+            .estate-split-layout {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .estate-visual-column {
+                position: static;
+                order: 2;
+            }
+            .section-header-left .section-title,
+            .section-header-left {
+                text-align: center;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-container { 
                 flex-direction: column; 
@@ -392,42 +497,41 @@
         }
     </style>
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Santa Barbara Tech Gal",
-  "description": "Premium residential estate IT services and boutique commercial support from Santa Maria to Westlake Village. Specializing in property-wide Wi-Fi engineering, advanced cybersecurity defense, data protection, and medical HIPAA compliance.",
-  "url": "https://thesbtechgal.com",
-  "telephone": "805-225-7885", 
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "924 Anacapa St Suite G1",
-    "addressLocality": "Santa Barbara",
-    "addressRegion": "CA",
-    "postalCode": "93101",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Santa Barbara County" },
-    { "@type": "AdministrativeArea", "name": "Ventura County" },
-    { "@type": "Place", "name": "Santa Barbara" },
-    { "@type": "Place", "name": "Montecito" },
-    { "@type": "Place", "name": "Goleta" },
-    { "@type": "Place", "name": "Noleta" },
-    { "@type": "Place", "name": "Summerland" },
-    { "@type": "Place", "name": "Carpinteria" },
-    { "@type": "Place", "name": "Santa Maria" },
-    { "@type": "Place", "name": "Ventura" },
-    { "@type": "Place", "name": "Oxnard" },
-    { "@type": "Place", "name": "Camarillo" },
-    { "@type": "Place", "name": "Ojai" },
-    { "@type": "Place", "name": "Thousand Oaks" },
-    { "@type": "Place", "name": "Westlake Village" }
-  ]
-}
-</script>
-    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Santa Barbara Tech Gal",
+      "description": "Premium residential estate IT services and boutique commercial support from Santa Maria to Westlake Village. Specializing in property-wide Wi-Fi engineering, advanced cybersecurity defense, data protection, and medical HIPAA compliance.",
+      "url": "https://thesbtechgal.com",
+      "telephone": "805-225-7885", 
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "924 Anacapa St Suite G1",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93101",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Santa Barbara County" },
+        { "@type": "AdministrativeArea", "name": "Ventura County" },
+        { "@type": "Place", "name": "Santa Barbara" },
+        { "@type": "Place", "name": "Montecito" },
+        { "@type": "Place", "name": "Goleta" },
+        { "@type": "Place", "name": "Noleta" },
+        { "@type": "Place", "name": "Summerland" },
+        { "@type": "Place", "name": "Carpinteria" },
+        { "@type": "Place", "name": "Santa Maria" },
+        { "@type": "Place", "name": "Ventura" },
+        { "@type": "Place", "name": "Oxnard" },
+        { "@type": "Place", "name": "Camarillo" },
+        { "@type": "Place", "name": "Ojai" },
+        { "@type": "Place", "name": "Thousand Oaks" },
+        { "@type": "Place", "name": "Westlake Village" }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -463,6 +567,10 @@
                 <img src="Gemini_Generated_Image_agke48agke48agke.png" alt="Santa Barbara Smart Home Tech Tile Art" class="brand-tile-art">
             </div>
             <p class="tile-caption">Preserving historic estate aesthetics while engineering modern digital architecture.</p>
+            
+            <div class="estate-cta-wrapper">
+                <a href="#concierge" class="btn-path btn-business">Inquire About Estate Management</a>
+            </div>
         </div>
 
         <div class="estate-text-column">
@@ -498,10 +606,6 @@
                         <li>Discreet, on-demand hardware configuration and decommissioning</li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="estate-cta-wrapper">
-                <a href="#concierge" class="btn-path btn-business">Inquire About Estate Management</a>
             </div>
         </div>
 
@@ -625,7 +729,7 @@
         </div>
     </section>
 
-  <footer>
+    <footer>
         <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
         <p style="margin-top: 12px; font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
             <span style="color: var(--border-gold);">Santa Barbara County:</span> Montecito, Santa Barbara, Goleta, Noleta, Summerland, Carpinteria, & Santa Maria<br>
