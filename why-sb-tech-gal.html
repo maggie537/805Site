@@ -102,7 +102,7 @@
         }
 
         .main-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 100px 40px;
         }
@@ -121,6 +121,81 @@
             color: #4A5568;
             line-height: 1.8;
             margin-bottom: 25px;
+        }
+
+        /* Services Tier Grid Layout */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0 80px 0;
+        }
+
+        .tier-card {
+            background-color: var(--pure-white);
+            padding: 35px 30px;
+            border: 1px solid #ECE7E1;
+            border-top: 4px solid var(--sea-glass);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tier-card .tier-number {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sea-glass);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .tier-card h2 {
+            font-family: var(--serif-font);
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--slate-charcoal);
+            margin-bottom: 5px;
+        }
+
+        .tier-card .tier-subtitle {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--border-gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .tier-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4A5568;
+            margin-bottom: 25px;
+        }
+
+        .tier-features {
+            list-style: none;
+            padding-left: 0;
+            margin-top: auto; /* Pushes items nicely if descriptions vary slightly in length */
+        }
+
+        .tier-features li {
+            font-size: 14px;
+            color: var(--slate-charcoal);
+            margin-bottom: 14px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .tier-features li::before {
+            content: "•";
+            color: var(--sea-glass);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .credentials-header {
@@ -197,6 +272,7 @@
             nav a { margin: 0 10px; font-size: 12px; }
             .intro-box h1 { font-size: 36px; }
             .main-content { padding: 60px 20px; }
+            .tier-grid { margin: 30px 0; }
         }
     </style>
 </head>
@@ -220,8 +296,45 @@
     <main class="main-content">
         <div class="intro-box">
             <h1>The Standard of Expertise Your Infrastructure Deserves.</h1>
-            <p>In high-stakes personal and professional environments, relying on unverified generalists exposes your operations to significant data risks. I match my operational discipline with rigorous, industry-recognized credentials to deliver top-tier cybersecurity and systems architecture right to your workspace.</p>
-            <p>My methodologies closely align with federal cybersecurity standards to establish resilient operational postures that confidently minimize risks and stand up to strict compliance audits.</p>
+            <p>In high-stakes personal and professional environments, relying on unverified generalists introduces unnecessary risk. I combine rigorous, industry-recognized credentials with strict operational discipline to deliver top-tier cybersecurity and robust systems architecture engineered specifically for your environment.</p>
+        </div>
+
+        <div class="tier-grid">
+            
+            <div class="tier-card">
+                <div class=Commercial</div>
+                <div class="tier-subtitle">Enterprise Security & Compliance</div>
+                <p>Designed for high-stakes professional environments that cannot afford downtime, data exposure, or operational disruptions.</p>
+                <ul class="tier-features">
+                    <li><strong>Audit-Ready Compliance:</strong> Methodologies closely aligned with federal standards to stand up to strict compliance audits.</li>
+                    <li><strong>Defensive Architecture:</strong> Proactive identity management, strict access controls, and active incident response mapping.</li>
+                    <li><strong>Data Risk Mitigation:</strong> Strategic threat modeling to confidently safeguard proprietary client data and business continuity.</li>
+                </ul>
+            </div>
+
+            <div class="tier-card" style="border-top-color: var(--border-gold);">
+                <div class=Private Estates</div>
+                <div class="tier-subtitle">The Intersection of Luxury & Security</div>
+                <p>Tailored for sprawling properties requiring enterprise-grade network reliability combined with absolute residential discretion.</p>
+                <ul class="tier-features">
+                    <li><strong>Unified Network Fabric:</strong> Seamlessly bridging complex smart-home automation with robust, secure network segmentation.</li>
+                    <li><strong>Discrete Privacy Shields:</strong> Isolating and protecting IoT devices, perimeter cameras, and staff networks from external threats.</li>
+                    <li><strong>High-Bandwidth Infrastructure:</strong> Ensuring flawless coverage and handoffs across main residences, guest houses, and gates.</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <div class=Residential</div>
+                <h2>Smart Homes</h2>
+                <div class="tier-subtitle">Seamless, Secure Connectivity</div>
+                <p>Built for modern households that demand blazing-fast, reliable tech infrastructure without compromising family digital privacy.</p>
+                <ul class="tier-features">
+                    <li><strong>High-Performance Routing:</strong> Dead-zone elimination and tailored Wi-Fi setups optimized for remote work and streaming.</li>
+                    <li><strong>Device Isolation:</strong> Sandboxing smart home gadgets to guarantee a compromised toy or appliance can't reach your personal data.</li>
+                    <li><strong>Lifecycle Logistics:</strong> Expert hardware selection, endpoint optimization, and long-term tech health management.</li>
+                </ul>
+            </div>
+
         </div>
 
         <h2 class="credentials-header">Validated Technical Credentials</h2>
