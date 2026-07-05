@@ -580,10 +580,11 @@
     <section class="hero">
     <div class="hero-title-container">
         <img src="LOGO.png" alt="Santa Barbara Tech Gal Logo" class="hero-logo" style="margin-bottom: 10px;">
+        <h1>Premium IT & Cyber Defense</h1>
     </div>
     
     <p class="hero-description-merged">
-        <strong>Certified technical support, repairs and advanced cybersecurity for homes and businesses in Santa Barbara and neighboring counties.</li>
+        <strong>Certified technical support, repairs, and advanced cybersecurity for homes and businesses in Santa Barbara and neighboring counties.</strong>
     </p>
     
     <div class="split-container">
@@ -795,12 +796,15 @@
                     'Accept': 'application/json'
                 }
             }).then(response => {
-                if (response.ok) {
-                    status.innerHTML = "Thank You. Your Request Has Been Received.";
-                    status.style.backgroundColor = "#1F2326"; 
-                    status.style.color = "#F9F6F0";
-                    form.reset(); 
-                } else {
+               if (response.ok) {
+    status.innerHTML = "Thank You. Your Request Has Been Received.";
+    status.style.backgroundColor = "#1F2326"; 
+    status.style.color = "#F9F6F0";
+    form.reset(); 
+    
+    // Add this line to handle the redirect after a successful AJAX submission
+    window.location.href = "thank-you.html"; 
+} else {
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
                             status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
