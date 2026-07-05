@@ -103,12 +103,28 @@
             color: var(--pure-white);
         }
 
-        /* Hero Section */
+        /* Hero Section Layout */
         .hero {
             background-color: var(--montecito-sand);
             text-align: center;
             padding: 120px 20px;
             border-bottom: 1px solid #ECE7E1;
+        }
+
+        .hero-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto 25px auto;
+            flex-wrap: wrap;
+        }
+
+        .hero-logo {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
         }
 
         .hero-tag {
@@ -125,10 +141,9 @@
             font-size: 52px;
             font-weight: 400;
             line-height: 1.15;
-            margin-bottom: 25px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 750px;
+            text-align: left;
+            margin: 0;
         }
 
         .hero p {
@@ -475,6 +490,13 @@
             .section-header-left {
                 text-align: center;
             }
+            .hero-title-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -557,7 +579,10 @@
     </header>
 
     <section class="hero">
-        <h1>SB Tech Gal: Complete IT Services for Santa Barbara County & Surrounding Areas</h1>
+        <div class="hero-title-container">
+            <img src="LOGO.png" alt="Santa Barbara Tech Gal Logo" class="hero-logo">
+            <h1>SB Tech Gal: Complete IT Services for Santa Barbara County & Surrounding Areas</h1>
+        </div>
         <p>From expert hardware repair and property-wide Wi-Fi to advanced cybersecurity and compliance readiness, we deliver certified support to keep your business or home running flawlessly and securely.</p>
         <div class="split-container">
             <a href="#estate-services" class="btn-path btn-home">Residential IT Services</a>
@@ -570,7 +595,7 @@
             
             <div class="estate-visual-column">
                 <div class="tile-wrapper">
-                    <img src="home.png" alt="Santa Barbara Smart Home Tech Tile Art" class="brand-tile-art">
+                    <img src="homewifi.png" alt="Santa Barbara Smart Home Tech Tile Art" class="brand-tile-art">
                 </div>
                 <p class="tile-caption">Preserving historic estate aesthetics while engineering modern digital architecture.</p>
                 
@@ -623,7 +648,7 @@
             
             <div class="estate-visual-column">
                 <div class="tile-wrapper">
-                    <img src="Gemini_Generated_Image_ (7).png" alt="Santa Barbara Commercial Tech Tile Art" class="brand-tile-art">
+                    <img src="business.png" alt="Santa Barbara Commercial Tech Tile Art" class="brand-tile-art">
                 </div>
                 <p class="tile-caption">Modernizing professional infrastructure with secure, high-uptime digital architectures.</p>
                 
@@ -677,6 +702,7 @@
     <section id="sustainability-craft">
         <div class="section-container">
             <div class="section-header-box">
+                <img src="computer repair.png" alt="Computer Repair Icon" style="display: block; margin: 0 auto 25px auto; max-width: 150px; height: auto;">
                 <h2 class="section-title">Repair & Builds</h2>
                 <p class="section-subtitle">Fix what’s broken, upgrade what isn't. Save money and keep electronics out of landfills by maximizing the hardware you already own.</p>
             </div>
