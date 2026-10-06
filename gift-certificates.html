@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Certificates | SB Tech Gal</title>
+    <meta name="description" content="Give someone the gift of stress-free tech help. SB Tech Gal gift certificates for computer setup, Wi-Fi, security, and everyday support in Santa Barbara and Ventura Counties.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thesbtechgal.com/gift-certificates.html">
+    <meta property="og:title" content="Gift Certificates | SB Tech Gal">
+    <meta property="og:description" content="Give someone the gift of stress-free tech help.">
+    <meta property="og:image" content="https://thesbtechgal.com/LOGO.png">
+
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --slate-charcoal: #2A2F35;
+            --sea-glass: #5A7E7A;
+            --montecito-sand: #F9F6F0;
+            --pure-white: #FFFFFF;
+            --border-gold: #D4AF37;
+            --muted-gray: #718096;
+
+            --serif-font: 'Cormorant Garamond', Georgia, serif;
+            --sans-font: 'Inter', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            color: var(--slate-charcoal);
+            background-color: var(--pure-white);
+            font-family: var(--sans-font);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .top-accent-bar { height: 4px; background: linear-gradient(90deg, var(--sea-glass), var(--border-gold)); }
+
+        header {
+            background-color: var(--pure-white);
+            border-bottom: 1px solid #ECE7E1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--slate-charcoal);
+            text-decoration: none;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        .logo span { color: var(--sea-glass); font-weight: 400; }
+
+        nav { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+        nav a {
+            text-decoration: none;
+            color: var(--slate-charcoal);
+            margin-left: 30px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--sea-glass); }
+        nav a.current { color: var(--sea-glass); }
+
+        .cta-btn-nav {
+            border: 1px solid var(--slate-charcoal);
+            padding: 10px 24px;
+            font-size: 11px !important;
+            transition: all 0.3s ease;
+        }
+        .cta-btn-nav:hover { background-color: var(--slate-charcoal); color: var(--pure-white); }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--sea-glass);
+            outline-offset: 3px;
+        }
+
+        /* Hero */
+        .hero {
+            background-color: var(--montecito-sand);
+            text-align: center;
+            padding: 110px 20px 100px;
+            border-bottom: 1px solid #ECE7E1;
+        }
+        .hero-tag {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--sea-glass);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .hero h1 {
+            font-family: var(--serif-font);
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.15;
+            max-width: 860px;
+            margin: 0 auto 22px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 640px;
+            margin: 0 auto 40px;
+            color: #555F6D;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .btn-path {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background-color: var(--slate-charcoal);
+            color: var(--pure-white);
+            border: 1px solid var(--slate-charcoal);
+        }
+        .btn-path:hover { background-color: var(--sea-glass); border-color: var(--sea-glass); }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--slate-charcoal);
+        }
+        .btn-outline:hover { background-color: var(--pure-white); color: var(--sea-glass); border-color: var(--sea-glass); }
+
+        /* Sections */
+        .section-container { max-width: 1240px; margin: 0 auto; padding: 90px 40px; }
+        .section-header-box { text-align: center; max-width: 700px; margin: 0 auto 55px; }
+        .section-title {
+            font-family: var(--serif-font);
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .section-sub { color: #555F6D; font-weight: 300; font-size: 17px; }
+
+        /* Certificate tiers */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .tier {
+            background: var(--montecito-sand);
+            border: 1px solid #ECE7E1;
+            border-top: 3px solid var(--border-gold);
+            padding: 44px 34px 38px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .tier.featured { border-top-color: var(--sea-glass); background: var(--pure-white); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+        .tier h3 { font-family: var(--serif-font); font-size: 28px; font-weight: 600; margin-bottom: 6px; }
+        .tier .price { font-family: var(--serif-font); font-size: 54px; line-height: 1.1; color: var(--sea-glass); margin: 10px 0 18px; }
+        .tier p { font-size: 15px; color: #4A5568; font-weight: 300; margin-bottom: 22px; }
+        .tier ul { list-style: none; text-align: left; margin-bottom: 30px; flex-grow: 1; }
+        .tier ul li { position: relative; padding-left: 24px; margin-bottom: 11px; font-size: 15px; color: #4A5568; font-weight: 300; }
+        .tier ul li::before { content: "—"; color: var(--border-gold); position: absolute; left: 0; }
+        .tier .btn-path { text-align: center; }
+
+        .custom-note { text-align: center; margin-top: 34px; color: #555F6D; font-weight: 300; }
+        .custom-note a { color: var(--sea-glass); font-weight: 500; }
+
+        /* How it works */
+        .bg-linen { background-color: var(--montecito-sand); border-top: 1px solid #ECE7E1; border-bottom: 1px solid #ECE7E1; }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; counter-reset: step; }
+        .step { counter-increment: step; }
+        .step::before {
+            content: counter(step);
+            display: block;
+            font-family: var(--serif-font);
+            font-size: 44px;
+            font-style: italic;
+            color: var(--border-gold);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .step h3 { font-family: var(--serif-font); font-size: 26px; font-weight: 600; margin-bottom: 8px; }
+        .step p { font-size: 15px; color: #4A5568; font-weight: 300; }
+
+        /* Terms */
+        .terms { max-width: 760px; margin: 0 auto; }
+        .terms h2 { font-family: var(--serif-font); font-size: 30px; font-weight: 400; margin-bottom: 18px; }
+        .terms ul { list-style: none; }
+        .terms li { position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 15px; color: #4A5568; font-weight: 300; }
+        .terms li::before { content: "—"; color: var(--border-gold); position: absolute; left: 0; }
+
+        .back-home-box { text-align: center; padding-bottom: 80px; }
+        .back-link {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;
+            color: var(--sea-glass); text-decoration: none; transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--slate-charcoal); }
+
+        footer {
+            background-color: #1F2326;
+            color: #9299A2;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 13px;
+            border-top: 1px solid #2D3237;
+            letter-spacing: 1px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 992px) {
+            .tier-grid, .steps { grid-template-columns: 1fr; }
+            .tier-grid { max-width: 460px; margin: 0 auto; }
+            .steps { gap: 36px; max-width: 460px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 20px; padding: 20px; }
+            nav { justify-content: center; gap: 8px 0; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            .hero { padding: 70px 20px; }
+            .hero h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .section-container { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-accent-bar"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <nav>
+                <a href="/#estate-services">Residential</a>
+                <a href="/#commercial-services">Commercial</a>
+                <a href="/#sustainability-craft">Repair &amp; Builds</a>
+                <a href="/services.html">Start Here</a>
+                <a href="/why-sb-tech-gal.html">Why SB Tech Gal</a>
+                <a href="/gift-certificates.html" class="current" aria-current="page">Gift Certificates</a>
+                <a href="/#concierge" class="cta-btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-tag">Serving Santa Barbara &amp; Ventura Counties</div>
+            <h1>Give someone the gift of tech that just works.</h1>
+            <p>A new computer for Mom. A Wi-Fi network that finally reaches the patio. A calm, patient person to handle it all. A gift certificate lets you take the tech headache off someone's plate.</p>
+            <a href="#choose" class="btn-path">Choose a Certificate</a>
+        </section>
+
+        <section class="section-container" id="choose">
+            <div class="section-header-box">
+                <h2 class="section-title">Choose a certificate</h2>
+                <p class="section-sub">Each certificate is emailed to your recipient with a personal message from you. They keep it until they're ready to use it.</p>
+            </div>
+
+            <div class="tier-grid">
+                <!-- Edit hours, prices, and descriptions below to match your offerings. -->
+                <div class="tier">
+                    <h3>One Hour</h3>
+                    <div class="price">$175</div>
+                    <p>A focused visit for one small problem.</p>
+                    <ul>
+                        <li>Printer, email, or phone setup</li>
+                        <li>Wi-Fi troubleshooting</li>
+                        <li>Questions answered in plain English</li>
+                    </ul>
+                    <a href="YOUR_SQUARE_GIFT_CARD_LINK" class="btn-path btn-outline">Buy $175</a>
+                </div>
+
+                <div class="tier featured">
+                    <h3>Two Hours</h3>
+                    <div class="price">$350</div>
+                    <p>Our most popular choice for a new device.</p>
+                    <ul>
+                        <li>New computer or tablet setup</li>
+                        <li>Data transfer from an old device</li>
+                        <li>Account and password cleanup</li>
+                    </ul>
+                    <a href="YOUR_SQUARE_GIFT_CARD_LINK" class="btn-path">Buy $350</a>
+                </div>
+
+                <div class="tier">
+                    <h3>Three Hours</h3>
+                    <div class="price">$525</div>
+                    <p>A full tune-up for the whole household.</p>
+                    <ul>
+                        <li>Multiple devices set up and secured</li>
+                        <li>Home network check and tune-up</li>
+                        <li>Backups and security basics</li>
+                    </ul>
+                    <a href="YOUR_SQUARE_GIFT_CARD_LINK" class="btn-path btn-outline">Buy $525</a>
+                </div>
+            </div>
+
+            <p class="custom-note">Want a different amount? You can enter any amount at checkout, or <a href="/#concierge">contact us</a> and we'll help you choose.</p>
+        </section>
+
+        <section class="bg-linen">
+            <div class="section-container">
+                <div class="section-header-box">
+                    <h2 class="section-title">How it works</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <h3>You buy</h3>
+                        <p>Pick an amount, add your recipient's email and a personal note, and pay securely through Square.</p>
+                    </div>
+                    <div class="step">
+                        <h3>They receive it</h3>
+                        <p>Your recipient gets an email with the gift certificate and a unique code, delivered right away.</p>
+                    </div>
+                    <div class="step">
+                        <h3>They book</h3>
+                        <p>When they're ready, they call or email us to schedule. We apply the certificate when the work is done.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <div class="terms">
+                <h2>Good to know</h2>
+                <ul>
+                    <li>Certificates can be applied to any SB Tech Gal service, including hourly support and flat-rate packages.</li>
+                    <li>Gift certificates don't expire.</li>
+                    <li>Certificates can be shared or passed along. Whoever holds the code can use it.</li>
+                    <li>We serve Santa Barbara and Ventura Counties. Not sure if your recipient is in our area? Just ask.</li>
+                    <li>Questions before you buy? Call <a href="tel:+18052257885" style="color: var(--sea-glass);">(805) 225-7885</a> or email <a href="mailto:Maggie@thesbtechgal.com" style="color: var(--sea-glass);">Maggie@thesbtechgal.com</a>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="back-home-box">
+            <a href="/" class="back-link">← Return Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
