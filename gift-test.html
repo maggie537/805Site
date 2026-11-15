@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Certificates | SB Tech Gal</title>
+    <meta name="description" content="Give the gift of tech support. Time with SB Tech Gal for a parent, friend or loved one in Santa Barbara and Ventura Counties.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thesbtechgal.com/gift-certificates.html">
+    <meta property="og:title" content="Gift Certificates | SB Tech Gal">
+    <meta property="og:description" content="Give the gift of tech support.">
+    <meta property="og:image" content="https://thesbtechgal.com/LOGO.png">
+
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Square Web Payments SDK. For testing use the sandbox file; for real sales switch to https://web.squarecdn.com/v1/square.js -->
+    <script src="https://web.squarecdn.com/v1/square.js"></script>
+
+    <script>
+        // ====== SETTINGS: change these when going from testing to real sales ======
+        window.GIFT_CONFIG = {
+            squareAppId: 'sq0idp-rxuUW6JwEHnMKlxq_cunFQ',
+            squareLocationId: 'LZCTB98FS815B',
+            apiUrl: 'https://sbtechgal-gifts.the-sb-tech-gal.workers.dev/api/gift-certificate',
+            pricePerHourCents: 17500,   // must match PRICE_PER_HOUR_CENTS in wrangler.toml
+            mailFeeCents: 1000           // must match MAIL_FEE_CENTS in wrangler.toml
+        };
+    </script>
+
+    <style>
+        :root {
+            --slate-charcoal: #2A2F35;
+            --sea-glass: #5A7E7A;
+            --sea-glass-dark: #47685F;
+            --montecito-sand: #F9F6F0;
+            --pure-white: #FFFFFF;
+            --border-gold: #D4AF37;
+            --line: #ECE7E1;
+            --serif-font: 'Cormorant Garamond', Georgia, serif;
+            --sans-font: 'Inter', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { color: var(--slate-charcoal); background: var(--pure-white); font-family: var(--sans-font); font-size: 16px; -webkit-font-smoothing: antialiased; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        .top-accent-bar { height: 4px; background: linear-gradient(90deg, var(--sea-glass), var(--border-gold)); }
+
+        header { background: var(--pure-white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .logo { font-family: var(--serif-font); font-size: 30px; font-weight: 600; color: var(--slate-charcoal); text-decoration: none; letter-spacing: 1px; white-space: nowrap; }
+        .logo span { color: var(--sea-glass); font-weight: 400; }
+        nav { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+        nav a { text-decoration: none; color: var(--slate-charcoal); margin-left: 30px; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; transition: color 0.3s; padding: 10px 0; }
+        nav a:hover { color: var(--sea-glass); }
+        nav a.current { color: var(--sea-glass-dark); }
+        .cta-btn-nav { border: 1px solid var(--slate-charcoal); padding: 10px 24px; font-size: 11px !important; transition: all 0.3s ease; }
+        .cta-btn-nav:hover { background: var(--slate-charcoal); color: var(--pure-white); }
+
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--sea-glass); outline-offset: 3px; }
+
+        .hero { background: var(--montecito-sand); text-align: center; padding: 90px 20px 80px; border-bottom: 1px solid var(--line); }
+        .hero h1 { font-family: var(--serif-font); font-size: 52px; font-weight: 400; line-height: 1.15; max-width: 860px; margin: 0 auto 22px; }
+        .hero p { font-size: 18px; max-width: 640px; margin: 0 auto; color: #555F6D; font-weight: 300; line-height: 1.7; }
+
+        .main-wrap { max-width: 1240px; width: 100%; margin: 0 auto; padding: 70px 40px 80px; }
+        .progress { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: center; margin-bottom: 30px; }
+        .progress li { display: flex; align-items: center; gap: 10px; font-weight: 500; color: #4A5568; letter-spacing: 1px; }
+        .progress .dot { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 15px; font-weight: 600; border: 1px solid #8A9096; color: var(--slate-charcoal); }
+        .progress li.current { color: var(--slate-charcoal); font-weight: 600; }
+        .progress li.current .dot { background: var(--slate-charcoal); color: #fff; border-color: var(--slate-charcoal); }
+        .progress li.done .dot { background: var(--sea-glass-dark); color: #fff; border-color: var(--sea-glass-dark); }
+
+        .layout { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .panel { flex: 999 1 560px; min-width: 0; background: var(--montecito-sand); border: 1px solid var(--line); border-top: 3px solid var(--border-gold); padding: 40px 36px; }
+        .summary { flex: 1 1 300px; min-width: 0; background: var(--pure-white); border: 1px solid var(--line); border-top: 3px solid var(--sea-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.04); padding: 32px 30px; }
+        .summary h2 { font-family: var(--serif-font); font-weight: 600; font-size: 28px; margin-bottom: 14px; }
+        .sum-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; font-size: 15px; color: #4A5568; }
+        .sum-row b { color: var(--slate-charcoal); font-weight: 600; white-space: nowrap; }
+        .sum-total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0 6px; margin-top: 8px; border-top: 1px solid var(--line); }
+        .sum-total span:first-child { font-weight: 600; }
+        .sum-total span:last-child { font-family: var(--serif-font); font-size: 34px; color: var(--sea-glass-dark); }
+        .small-note { font-size: 13px; color: #4A5568; font-weight: 300; margin-top: 12px; }
+
+        h2.step-title { font-family: var(--serif-font); font-weight: 400; font-size: 36px; line-height: 1.2; margin-bottom: 8px; }
+        .step-sub { margin-bottom: 24px; color: #555F6D; font-weight: 300; font-size: 17px; }
+        [hidden] { display: none !important; }
+
+        .time-cards { display: flex; flex-wrap: wrap; gap: 16px; }
+        .time-card { flex: 1 1 180px; text-align: center; font: inherit; color: var(--slate-charcoal); padding: 26px 20px 22px; cursor: pointer; min-height: 48px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--border-gold); }
+        .time-card[aria-pressed="true"] { border: 2px solid var(--slate-charcoal); border-top: 3px solid var(--sea-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+        .time-card .t { display: block; font-family: var(--serif-font); font-size: 26px; font-weight: 600; line-height: 1.2; }
+        .time-card .p { display: block; font-family: var(--serif-font); font-size: 42px; line-height: 1.1; color: var(--sea-glass-dark); margin-top: 6px; }
+        .stepper { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+        .stepper button { width: 48px; height: 48px; font: inherit; font-size: 22px; font-weight: 600; color: var(--slate-charcoal); background: #fff; border: 1px solid var(--slate-charcoal); border-radius: 50%; cursor: pointer; }
+        .stepper .label { min-width: 190px; text-align: center; font-weight: 600; font-size: 18px; }
+        .rate-note { margin-top: 14px; font-size: 14px; color: #4A5568; font-weight: 300; }
+        .delivery { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+        .delivery span { font-size: 15px; color: #4A5568; }
+        .link-btn { font: inherit; font-size: 15px; font-weight: 600; color: var(--sea-glass-dark); background: transparent; border: 0; padding: 12px 0; min-height: 44px; text-decoration: underline; cursor: pointer; }
+        .more-note { margin-top: 6px; font-size: 14px; color: #4A5568; font-weight: 300; }
+        .more-note a, .link { color: var(--sea-glass-dark); font-weight: 600; }
+
+        label.field { display: block; margin-top: 16px; font-weight: 500; }
+        label.field:first-child { margin-top: 0; }
+        .row { display: flex; flex-wrap: wrap; gap: 16px; }
+        .row > label.field { flex: 1 1 240px; margin-top: 0; }
+        .row.small > label.field { flex: 1 1 120px; }
+        .opt { font-weight: 300; color: #4A5568; }
+        input[type=text], input[type=email], textarea { width: 100%; margin-top: 6px; padding: 12px 14px; font: inherit; font-size: 16px; color: var(--slate-charcoal); background: #fff; border: 1px solid #8A9096; border-radius: 0; min-height: 48px; }
+        textarea { resize: vertical; }
+        .addr { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+        .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+        #card-container { margin-top: 6px; min-height: 90px; }
+        .secure-note { margin-top: 14px; font-size: 13px; color: #4A5568; font-weight: 300; }
+
+        .error { margin-top: 20px; padding: 12px 14px; background: #fff; border: 1px solid #9B3B22; border-left: 4px solid #9B3B22; color: #7A2E12; font-weight: 500; }
+        .nav-btns { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+        .btn { font: inherit; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; min-height: 48px; padding: 16px 40px; transition: all .3s ease; }
+        .btn-solid { background: var(--slate-charcoal); color: #fff; border: 1px solid var(--slate-charcoal); }
+        .btn-solid:hover:not(:disabled) { background: var(--sea-glass); border-color: var(--sea-glass); }
+        .btn-solid:disabled { opacity: .6; cursor: wait; }
+        .btn-ghost { background: transparent; color: var(--slate-charcoal); border: 1px solid var(--slate-charcoal); }
+        .btn-ghost:hover { background: #fff; color: var(--sea-glass-dark); border-color: var(--sea-glass); }
+
+        .thanks { font-family: var(--serif-font); font-weight: 400; font-size: 42px; line-height: 1.15; margin-bottom: 8px; }
+        .cert { max-width: 560px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--sea-glass); box-shadow: 0 20px 40px rgba(0,0,0,0.04); padding: 36px 34px 32px; text-align: center; }
+        .cert .brand { font-family: var(--serif-font); font-size: 24px; font-weight: 600; letter-spacing: 1px; }
+        .cert .brand span { color: var(--sea-glass); font-weight: 400; }
+        .cert .kicker { font-size: 12px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--sea-glass-dark); margin: 18px 0 4px; }
+        .cert .amt { font-family: var(--serif-font); font-size: 68px; line-height: 1.1; color: var(--sea-glass-dark); }
+        .cert .time { font-family: var(--serif-font); font-size: 26px; font-weight: 600; margin-bottom: 16px; }
+        .cert .rule { width: 48px; height: 1px; background: var(--border-gold); margin: 0 auto 16px; }
+        .cert .who { color: #4A5568; }
+        .cert .who strong { color: var(--slate-charcoal); }
+        .cert .msg { font-family: var(--serif-font); font-style: italic; font-size: 20px; margin: 14px 0 16px; color: #4A5568; white-space: pre-line; }
+        .cert .sched { margin-top: 18px; font-size: 14px; color: #4A5568; font-weight: 300; }
+        .cert .foot { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: #4A5568; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; }
+        .after { margin-top: 26px; max-width: 560px; color: #4A5568; font-weight: 300; font-size: 17px; }
+
+        footer { background: #1F2326; color: #9299A2; text-align: center; padding: 50px 20px; font-size: 13px; border-top: 1px solid #2D3237; letter-spacing: 1px; margin-top: auto; }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 14px; padding: 18px 20px; }
+            nav { justify-content: center; gap: 4px 0; }
+            nav a { margin: 0 10px; font-size: 12px; }
+            .hero { padding: 64px 20px 56px; }
+            .hero h1 { font-size: 36px; }
+            .main-wrap { padding: 44px 20px 60px; }
+            .panel { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-accent-bar"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <nav>
+                <a href="/#estate-services">Residential</a>
+                <a href="/#commercial-services">Commercial</a>
+                <a href="/#sustainability-craft">Repair &amp; Builds</a>
+                <a href="/services.html">Start Here</a>
+                <a href="/why-sb-tech-gal.html">Why SB Tech Gal</a>
+                <a href="/gift-certificates.html" class="current" aria-current="page">Gift Certificates</a>
+                <a href="/#concierge" class="cta-btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Give the Gift of Tech Support</h1>
+            <p>Time with SB Tech Gal for a parent, friend or loved one. Friendly, patient and unhurried.</p>
+        </section>
+
+        <div class="main-wrap">
+
+            <ol class="progress" id="progress" aria-label="Progress">
+                <li data-n="1"><span class="dot">1</span><span>Time</span></li>
+                <li data-n="2"><span class="dot">2</span><span>Details</span></li>
+                <li data-n="3"><span class="dot">3</span><span>Payment</span></li>
+            </ol>
+
+            <div class="layout">
+                <div class="panel" id="panel">
+
+                    <!-- Step 1 -->
+                    <section id="s1">
+                        <h2 class="step-title">How much time would make a good gift?</h2>
+                        <p class="step-sub">One-on-one help with clear communication, at a comfortable pace.</p>
+                        <div class="time-cards" id="timeCards"></div>
+                        <div class="stepper">
+                            <button type="button" id="less" aria-label="Remove one hour">−</button>
+                            <span class="label" id="sessionText"></span>
+                            <button type="button" id="more" aria-label="Add one hour">+</button>
+                        </div>
+                        <p class="rate-note">$175 an hour. 15-minute pro-rating available.</p>
+                        <div class="delivery">
+                            <span id="deliveryLine"></span>
+                            <button type="button" class="link-btn" id="toggleDelivery"></button>
+                        </div>
+                        <p class="more-note">Looking for more options? - a full list of my services is available <a href="/services.html#start" target="_blank" rel="noopener">here</a></p>
+                    </section>
+
+                    <!-- Step 2 -->
+                    <section id="s2" hidden>
+                        <h2 class="step-title">A few details</h2>
+                        <div class="row">
+                            <label class="field">Who is it from?
+                                <input type="text" id="buyerName" autocomplete="name" maxlength="100">
+                            </label>
+                            <label class="field">Email for the receipt
+                                <input type="email" id="buyerEmail" autocomplete="email" maxlength="200">
+                            </label>
+                        </div>
+                        <label class="field">Who is the gift for?
+                            <input type="text" id="recipientName" placeholder="A friend or loved one" maxlength="100">
+                        </label>
+                        <label class="field">Personal message <span class="opt">Optional</span>
+                            <textarea id="message" rows="3" maxlength="500"></textarea>
+                        </label>
+                        <div class="addr" id="addrBlock" hidden>
+                            <label class="field">Mailing address
+                                <input type="text" id="street" autocomplete="street-address" maxlength="150">
+                            </label>
+                            <label class="field">City, state and ZIP
+                                <input type="text" id="cityZip" maxlength="150">
+                            </label>
+                        </div>
+                        <!-- Honeypot: hidden from people, bots tend to fill it in -->
+                        <div class="hp" aria-hidden="true"><label>Website <input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+                    </section>
+
+                    <!-- Step 3 -->
+                    <section id="s3" hidden>
+                        <h2 class="step-title">Payment</h2>
+                        <p class="step-sub">Card details go straight to Square and never touch this website.</p>
+                        <div id="card-container"></div>
+                        <p class="secure-note" id="cardStatus">Loading secure card form...</p>
+                    </section>
+
+                    <div class="error" id="error" role="alert" hidden></div>
+
+                    <div class="nav-btns" id="navBtns">
+                        <button type="button" class="btn btn-ghost" id="backBtn" hidden>Back</button>
+                        <button type="button" class="btn btn-solid" id="nextBtn">Continue</button>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <section id="s4" hidden>
+                        <h2 class="thanks" id="thanksTitle"></h2>
+                        <p class="step-sub" id="confirmLine"></p>
+                        <div class="cert">
+                            <div class="brand">Santa Barbara <span>Tech Gal</span></div>
+                            <div class="kicker">Gift Certificate</div>
+                            <div class="amt" id="certAmt"></div>
+                            <div class="time" id="certTime"></div>
+                            <div class="rule"></div>
+                            <div class="who">For <strong id="certFor"></strong></div>
+                            <div class="who" style="margin-bottom:12px">From <strong id="certFrom"></strong></div>
+                            <div class="msg" id="certMsg" hidden></div>
+                            <div class="sched">To schedule a visit, call (805) 225-7885 or email Maggie@thesbtechgal.com.</div>
+                            <div class="foot"><span id="certCode"></span><span>(805) 225-7885</span></div>
+                        </div>
+                        <p class="after">I look forward to helping. When ready, the recipient can reach me at (805) 225-7885 or Maggie@thesbtechgal.com to schedule a visit.</p>
+                        <div style="margin-top:24px"><a class="btn btn-ghost" href="/gift-certificates.html" style="display:inline-block;text-decoration:none">Buy another</a></div>
+                    </section>
+                </div>
+
+                <aside class="summary" id="summary">
+                    <h2>Summary</h2>
+                    <div class="sum-row"><span id="sumTime"></span><b id="sumAmt"></b></div>
+                    <div class="sum-row" id="sumFeeRow" hidden><span>Mailing fee</span><b id="sumFee"></b></div>
+                    <div class="sum-total"><span>Total</span><span id="sumTotal"></span></div>
+                    <p class="small-note">Parts are quoted separately.</p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
+    </footer>
+
+<script>
+(function () {
+    var C = window.GIFT_CONFIG;
+    var $ = function (id) { return document.getElementById(id); };
+    var state = { step: 1, hours: 1, delivery: 'digital', attemptId: newId(), paying: false };
+    var card = null, cardStarted = false;
+
+    function newId() {
+        if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 3 | 8)).toString(16);
+        });
+    }
+    function money(cents) { var d = cents / 100; return '$' + (cents % 100 === 0 ? d.toFixed(0) : d.toFixed(2)); }
+    function hoursLabel(h) { return h + (h === 1 ? ' hour' : ' hours'); }
+    function amountCents() { return state.hours * C.pricePerHourCents; }
+    function feeCents() { return state.delivery === 'print' ? C.mailFeeCents : 0; }
+    function totalCents() { return amountCents() + feeCents(); }
+    function val(id) { return $(id).value.trim(); }
+
+    // time cards
+    [1, 2, 3].forEach(function (h) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'time-card'; b.dataset.h = h;
+        b.innerHTML = '<span class="t">' + hoursLabel(h) + '</span><span class="p">' + money(h * C.pricePerHourCents) + '</span>';
+        b.addEventListener('click', function () { state.hours = h; render(); });
+        $('timeCards').appendChild(b);
+    });
+    $('less').addEventListener('click', function () { state.hours = Math.max(1, state.hours - 1); render(); });
+    $('more').addEventListener('click', function () { state.hours = Math.min(8, state.hours + 1); render(); });
+    $('toggleDelivery').addEventListener('click', function () { state.delivery = state.delivery === 'print' ? 'digital' : 'print'; render(); });
+
+    function showError(msg) { var e = $('error'); e.textContent = msg; e.hidden = !msg; }
+
+    function render() {
+        // sections
+        ['s1', 's2', 's3', 's4'].forEach(function (id, i) { $(id).hidden = state.step !== i + 1; });
+        $('navBtns').hidden = state.step > 3;
+        $('summary').hidden = state.step > 3;
+        $('progress').hidden = state.step > 3;
+        $('backBtn').hidden = state.step === 1;
+        $('nextBtn').textContent = state.step === 3 ? 'Pay ' + money(totalCents()) : 'Continue';
+        Array.prototype.forEach.call($('progress').children, function (li) {
+            var n = +li.dataset.n;
+            li.className = state.step === n ? 'current' : (state.step > n ? 'done' : '');
+        });
+        // step 1
+        Array.prototype.forEach.call($('timeCards').children, function (b) {
+            b.setAttribute('aria-pressed', String(+b.dataset.h === state.hours));
+        });
+        $('sessionText').textContent = hoursLabel(state.hours) + ' (' + money(amountCents()) + ')';
+        var print = state.delivery === 'print';
+        $('deliveryLine').textContent = print
+            ? 'Printed card, mailed to the buyer. A mailing fee applies, and I need a little extra time.'
+            : 'Delivered as an e-voucher, emailed to the buyer.';
+        $('toggleDelivery').textContent = print ? 'Switch to e-voucher' : 'Prefer a printed card?';
+        $('addrBlock').hidden = !print;
+        // summary
+        $('sumTime').textContent = hoursLabel(state.hours) + ' with SB Tech Gal';
+        $('sumAmt').textContent = money(amountCents());
+        $('sumFeeRow').hidden = !print;
+        $('sumFee').textContent = money(feeCents());
+        $('sumTotal').textContent = money(totalCents());
+        // payment form
+        if (state.step === 3 && !cardStarted) startSquare();
+    }
+
+    function validateStep2() {
+        if (!val('buyerName') || !val('recipientName') || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('buyerEmail'))) {
+            return 'Please add who the gift is from, an email for the receipt, and who it is for.';
+        }
+        if (state.delivery === 'print' && (!val('street') || !val('cityZip'))) return 'Please add the mailing address.';
+        return '';
+    }
+
+    $('backBtn').addEventListener('click', function () { showError(''); state.step = Math.max(1, state.step - 1); render(); });
+    $('nextBtn').addEventListener('click', function () {
+        showError('');
+        if (state.step === 1) { state.step = 2; render(); return; }
+        if (state.step === 2) {
+            var err = validateStep2();
+            if (err) { showError(err); return; }
+            state.step = 3; render(); return;
+        }
+        if (state.step === 3) pay();
+    });
+
+    async function startSquare() {
+        cardStarted = true;
+        try {
+            if (!window.Square) throw new Error('Square failed to load');
+            var payments = window.Square.payments(C.squareAppId, C.squareLocationId);
+            card = await payments.card();
+            await card.attach('#card-container');
+            $('cardStatus').textContent = 'Payments are processed securely by Square.';
+        } catch (e) {
+            cardStarted = false;
+            $('cardStatus').textContent = '';
+            showError('The secure card form could not load. Please refresh the page, or call (805) 225-7885.');
+        }
+    }
+
+    async function pay() {
+        if (state.paying || !card) return;
+        state.paying = true;
+        var btn = $('nextBtn'); btn.disabled = true; btn.textContent = 'Processing...';
+        try {
+            var tok = await card.tokenize();
+            if (tok.status !== 'OK') {
+                var m = (tok.errors && tok.errors[0] && tok.errors[0].message) || 'Please check the card details and try again.';
+                throw { soft: m };
+            }
+            var res = await fetch(C.apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    hours: state.hours, delivery: state.delivery,
+                    buyerName: val('buyerName'), buyerEmail: val('buyerEmail'), recipientName: val('recipientName'),
+                    message: val('message'), street: val('street'), cityZip: val('cityZip'),
+                    website: $('website').value,
+                    sourceId: tok.token, attemptId: state.attemptId, expectedTotalCents: totalCents()
+                })
+            });
+            var data = await res.json().catch(function () { return {}; });
+            if (!res.ok) {
+                // After a definite failure a fresh attempt id is safe. After a server error it is not (the charge may have gone through).
+                if (res.status === 400 || res.status === 402) state.attemptId = newId();
+                throw { soft: data.message || 'Something went wrong. Please try again, or call (805) 225-7885.' };
+            }
+            showConfirmation(data);
+        } catch (e) {
+            showError(e && e.soft ? e.soft : 'The connection was interrupted. Please wait a moment and press Pay again. The card will not be charged twice.');
+        } finally {
+            state.paying = false; btn.disabled = false;
+            if (state.step === 3) btn.textContent = 'Pay ' + money(totalCents());
+        }
+    }
+
+    function showConfirmation(d) {
+        var first = (val('buyerName').split(/\s+/)[0]) || 'friend';
+        var print = state.delivery === 'print';
+        $('thanksTitle').textContent = 'Many thanks, ' + first;
+        $('confirmLine').textContent = print
+            ? 'A receipt is on its way to ' + val('buyerEmail') + ', and I will mail the card to the buyer.'
+            : 'The e-voucher and receipt are on their way to ' + val('buyerEmail') + '.';
+        $('certAmt').textContent = money(d.amountCents);
+        $('certTime').textContent = hoursLabel(d.hours);
+        $('certFor').textContent = val('recipientName');
+        $('certFrom').textContent = val('buyerName');
+        var m = val('message');
+        $('certMsg').hidden = !m; $('certMsg').textContent = m;
+        $('certCode').textContent = 'Code: ' + d.maskedCode;
+        state.step = 4; render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    render();
+})();
+</script>
+</body>
+</html>
