@@ -564,6 +564,18 @@
                 gap: 10px;
             }
         }
+
+        /* Phone menu */
+        .menu-toggle { display: none; background: none; border: 1px solid var(--slate-charcoal); color: var(--slate-charcoal); font-family: var(--sans-font); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 9px 14px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0; padding: 16px 20px; }
+            .logo { font-size: 22px; }
+            .menu-toggle { display: inline-block; }
+            nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 12px; }
+            nav.open { display: flex; }
+            nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
+            nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -610,8 +622,9 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Santa Barbara <span>Tech Gal</span></a>
-            <nav>
+            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
                 <a href="#estate-services">Residential</a>
                 <a href="#commercial-services">Commercial</a>
                 <a href="#sustainability-craft">Repair & Builds</a>
@@ -675,7 +688,7 @@
                             <h3>Reliable, Whole-Home Wi-Fi</h3>
                             <ul>
                                 <li>Maximum Coverage: We help minimize weak signals caused by thick walls, basements, brick, and outdoor spaces.</li>
-                                <li>Uncompromised Speed: Commercial-grade setups designed to support multiple remote workers, streaming devices, and gaming at the same time without lagging.</li>
+                                <li>Strong, Steady Speed: Commercial-grade setups built to handle remote work, streaming and gaming at the same time.</li>
                                 <li>Secure Guest Access: Separate Wi-Fi networks for visitors, contractors, or staff to keep your main family network completely private.</li>
                             </ul>
                         </div>
@@ -683,7 +696,7 @@
                         <div class="estate-pillar-item">
                             <h3>Privacy & Cyber Security</h3>
                             <ul>
-                                <li>Home Network Shields: Advanced firewall protection to block hackers, intrusive tracking, and cyber threats before they reach your devices.</li>
+                                <li>Home Network Protection: Firewall and filtering settings that help block hackers, tracking and common threats.</li>
                                 <li>Safe & Automatic Backups: Secure, automatic backups for irreplaceable family photos, financial records, and important documents.</li>
                                 <li>Smart Home Protection: Securing your smart TVs, security cameras, baby monitors, and smart locks from digital vulnerabilities.</li>
                             </ul>
@@ -692,7 +705,7 @@
                         <div class="estate-pillar-item">
                             <h3>On-Demand Tech Support & Setup</h3>
                             <ul>
-                                <li>Seamless Device Upgrades: Safely moving your data, contacts, and photos to new phones, tablets, or computers without losing a single file.</li>
+                                <li>Seamless Device Upgrades: Carefully moving your data, contacts, and photos to new phones, tablets, or computers, with a backup made first so nothing gets lost.</li>
                                 <li>Device Tune-Ups: Cleaning, speeding up, and extending the life of your existing computers and devices.</li>
                                 <li>Secure Tech Disposal: Properly setting up new equipment and securely wiping old devices before you recycle or sell them.</li>
                             </ul>
@@ -724,7 +737,7 @@
                         <div class="estate-pillar-item">
                             <h3>Workplace Continuity & Support</h3>
                             <ul>
-                                <li>Rapid Response Support: Immediate remote and on-site troubleshooting for your staff to eliminate costly downtime and keep operations running.</li>
+                                <li>Responsive Support: Remote and on-site troubleshooting for your staff, with response times set by your plan, to keep downtime to a minimum.</li>
                                 <li>Hardware Lifecycle Management: Seamless procurement, provisioning, and secure, encrypted disposal of company devices.</li>
                                 <li>Secure Cloud Collaboration: Optimized setup and advanced security management for Microsoft 365 and Google Workspace environments.</li>
                                 <li>Infrastructure Mapping: Full documentation and tracking of your digital assets to ensure predictable scaling and fast disaster recovery.</li>
@@ -735,19 +748,19 @@
                             <h3>Enterprise-Grade Business Networking</h3>
                             <ul>
                                 <li>Next-Gen Firewalls: Deployment of business-grade firewalls to defend proprietary data, financial assets, and intellectual property.</li>
-                                <li>VLAN & Network Segmentation: Separating critical back-office operations and point-of-sale systems from guest Wi-Fi to eliminate internal vulnerabilities.</li>
+                                <li>VLAN & Network Segmentation: Separating critical back-office operations and point-of-sale systems from guest Wi-Fi to reduce internal risk.</li>
                                 <li>Multi-Site Sync & Secure VPNs: Encrypted, high-speed VPN tunnels to seamlessly connect remote employees or multiple office branches.</li>
-                                <li>Traffic Monitoring for Maximum Uptime: Continuous network logging and bandwidth optimization to ensure your digital tools never lag or drop.</li>
+                                <li>Network Monitoring: Logging and bandwidth tuning that help you spot problems early and keep your tools running smoothly.</li>
                             </ul>
                         </div>
 
                         <div class="estate-pillar-item">
                             <h3>Regulatory Compliance & Cyber Defense</h3>
                             <ul>
-                                <li>Strict Endpoint Security & MFA: Enforcement of Multi-Factor Authentication (MFA) and device-level security policies across all staff computers to meet industry baseline requirements.</li>
-                                <li>Routine Vulnerability Audits: Proactive penetration testing and network auditing to patch security gaps and maintain standard regulatory compliance.</li>
+                                <li>Strict Endpoint Security & MFA: Enforcement of Multi-Factor Authentication (MFA) and device-level security policies across all staff computers to support industry baseline requirements.</li>
+                                <li>Routine Vulnerability Scans: Scheduled scans and network reviews, with a clear report of security gaps and help fixing them.</li>
                                 <li>Multi-Framework Compliance Support: Technical guidance and workflow configuration tailored to your specific industry standards, including HIPAA, SOC 2, PCI-DSS, and modern financial/legal privacy regulations.</li>
-                                <li>Immutable, Air-Gapped Backups: Bulletproof disaster recovery using isolated data replication, ensuring compliance-mandated data retention rules are flawlessly met and safe from ransomware.</li>
+                                <li>Offline &amp; Immutable Backups: Isolated backup copies that ransomware can't easily reach, set up to support your data retention requirements and tested so you know they restore.</li>
                             </ul>
                         </div>
 
@@ -762,7 +775,7 @@
         <section id="sustainability-craft">
             <div class="section-container">
                 <div class="section-header-box">
-                    <img src="computer repair.png" alt="Computer Repair Icon" style="display: block; margin: 0 auto 25px auto; max-width: 200px; height: auto;">
+                    <img src="computer-repair.png" alt="Computer Repair Icon" style="display: block; margin: 0 auto 25px auto; max-width: 200px; height: auto;">
                     <h2 class="section-title">Repair & Builds</h2>
                     <p class="section-subtitle">Fix what’s broken, upgrade what isn't. Save money and keep electronics out of landfills by maximizing the hardware you already own.</p>
                 </div>
@@ -905,6 +918,20 @@
         }
         
         form.addEventListener("submit", handleSubmit);
+    </script>
+    <script>
+        (function () {
+            var b = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+            if (!b || !n) return;
+            b.addEventListener('click', function () {
+                var open = n.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Close' : 'Menu';
+            });
+            n.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.textContent = 'Menu'; }
+            });
+        })();
     </script>
 </body>
 </html>

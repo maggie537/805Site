@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Santa Barbara Tech Gal</title>
+    <title>Services | SB Tech Gal</title>
     <meta name="description" content="Everything Santa Barbara Tech Gal offers: computer repair, cybersecurity setup, Wi-Fi and networking, and monthly support plans for home and business. Choose what fits and send your list in one step.">
     <link rel="canonical" href="https://thesbtechgal.com/services.html">
 
@@ -165,6 +165,18 @@
             .btn-path { min-width: 0; width: 100%; max-width: 340px; }
             .radio-group { flex-direction: column; gap: 10px; }
         }
+
+        /* Phone menu */
+        .menu-toggle { display: none; background: none; border: 1px solid var(--slate-charcoal); color: var(--slate-charcoal); font-family: var(--sans-font); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 9px 14px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0; padding: 16px 20px; }
+            .logo { font-size: 22px; }
+            .menu-toggle { display: inline-block; }
+            nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 12px; }
+            nav.open { display: flex; }
+            nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
+            nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
+        }
     </style>
 </head>
 <body>
@@ -173,7 +185,8 @@
     <header>
         <div class="nav-container">
             <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
-            <nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
                 <a href="/#estate-services">Residential</a>
                 <a href="/#commercial-services">Commercial</a>
                 <a href="/#sustainability-craft">Repair & Builds</a>
@@ -290,7 +303,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
+        <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
         <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
             <strong>Our Certified IT Service Areas:</strong><br>
             <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
@@ -383,6 +396,20 @@
         });
         update();
     })();
+    </script>
+    <script>
+        (function () {
+            var b = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+            if (!b || !n) return;
+            b.addEventListener('click', function () {
+                var open = n.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Close' : 'Menu';
+            });
+            n.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.textContent = 'Menu'; }
+            });
+        })();
     </script>
 </body>
 </html>
