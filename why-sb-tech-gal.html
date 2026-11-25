@@ -71,7 +71,6 @@
 
         .logo span {
             color: var(--sea-glass);
-            font-style: italic;
             font-weight: 400;
         }
 
@@ -282,6 +281,18 @@
             .main-content { padding: 60px 20px; }
             .tier-grid { margin: 30px 0; }
         }
+
+        /* Phone menu */
+        .menu-toggle { display: none; background: none; border: 1px solid var(--slate-charcoal); color: var(--slate-charcoal); font-family: var(--sans-font); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 9px 14px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0; padding: 16px 20px; }
+            .logo { font-size: 22px; }
+            .menu-toggle { display: inline-block; }
+            nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 12px; }
+            nav.open { display: flex; }
+            nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
+            nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
+        }
     </style>
 </head>
 <body>
@@ -290,12 +301,13 @@
     <header>
         <div class="nav-container">
             <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
-            <nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
                 <a href="/#estate-services">Residential</a>
                 <a href="/#commercial-services">Commercial</a>
                 <a href="/#sustainability-craft">Repair & Builds</a>
-                <a href="/services.html">Start Here</a>
-                <a href="#" style="color: var(--sea-glass);">Why SB Tech Gal</a>
+                <a href="/services.html">Services</a>
+                <a href="/why-sb-tech-gal.html" class="current" aria-current="page" style="color: var(--sea-glass);">Why SB Tech Gal</a>
                 <a href="/gift-certificates.html">Gift Certificates</a>
                 <a href="/#concierge" class="cta-btn-nav">Contact Us</a>
             </nav>
@@ -304,19 +316,18 @@
 
     <main class="main-content">
         <div class="intro-box">
-            <h1>The Standard of Expertise Your Infrastructure Deserves.</h1>
-            <p>In high-stakes personal and professional environments, relying on unverified generalists introduces unnecessary risk. I combine rigorous, industry-recognized credentials with strict operational discipline to deliver top-tier cybersecurity and robust systems architecture engineered specifically for your environment.</p>
+            <h1>Certified help you can trust.</h1>
+            <p>I hold CompTIA Security+, Network+ and A+ certifications and carry E&amp;O and cyber liability insurance, so your home or office tech is in careful, qualified hands. I'll explain everything in plain English along the way.</p>
         </div>
 
         <div class="tier-grid">
             
             <div class="tier-card">
-    <div class="tier-number">Commercial</div>              
                 <h2>Commercial</h2>
                 <div class="tier-subtitle">Enterprise Security & Compliance</div>
                 <p>Designed for high-stakes professional environments that cannot afford downtime, data exposure, or operational disruptions.</p>
                 <ul class="tier-features">
-                    <li><strong>Audit-Ready Compliance:</strong> Methodologies closely aligned with federal standards to stand up to strict compliance audits.</li>
+                    <li><strong>Compliance Support:</strong> Technical setup and documentation aligned with frameworks like HIPAA and PCI-DSS, to help you prepare for audits.</li>
                     <li><strong>Defensive Architecture:</strong> Proactive identity management, strict access controls, and active incident response mapping.</li>
                     <li><strong>Data Risk Mitigation:</strong> Strategic threat modeling to confidently safeguard proprietary client data and business continuity.</li>
                 </ul>
@@ -325,13 +336,12 @@
        
 
             <div class="tier-card">
-                <div class="tier-number">Residential</div>
                 <h2>Residential</h2>
                 <div class="tier-subtitle">Seamless, Secure Connectivity</div>
                 <p>Built for modern households that demand blazing-fast, reliable tech infrastructure without compromising family digital privacy.</p>
                 <ul class="tier-features">
-                    <li><strong>High-Performance Routing:</strong> Dead-zone elimination and tailored Wi-Fi setups optimized for remote work and streaming.</li>
-                    <li><strong>Device Isolation:</strong> Sandboxing smart home gadgets to guarantee a compromised toy or appliance can't reach your personal data.</li>
+                    <li><strong>High-Performance Routing:</strong> Fewer dead zones and tailored Wi-Fi setups optimized for remote work and streaming.</li>
+                    <li><strong>Device Isolation:</strong> Putting smart home gadgets on their own network, so a hacked toy or appliance has a much harder time reaching your personal data.</li>
                     <li><strong>Lifecycle Logistics:</strong> Expert hardware selection, endpoint optimization, and long-term tech health management.</li>
                 </ul>
             </div>
@@ -365,8 +375,27 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
+        <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
+        <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
+            <strong>Our Certified IT Service Areas:</strong><br>
+            <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
+            <span style="color: var(--border-gold);">Ventura County & Westlake:</span> Ventura, Oxnard, Camarillo, Ojai, Thousand Oaks, Westlake Village
+        </p>
     </footer>
 
+    <script>
+        (function () {
+            var b = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+            if (!b || !n) return;
+            b.addEventListener('click', function () {
+                var open = n.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Close' : 'Menu';
+            });
+            n.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.textContent = 'Menu'; }
+            });
+        })();
+    </script>
 </body>
 </html>
