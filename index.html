@@ -168,22 +168,6 @@
             max-width: 1100px;
             margin: 0 auto 25px auto;
         }
-        .hero .hero-wordmark {
-            font-family: var(--serif-font);
-            font-size: 88px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            line-height: 1;
-            color: #0A0D5E;
-            margin: 0;
-        }
-        .hero .hero-wordmark span {
-            color: var(--sea-glass);
-            font-weight: 400;
-        }
-        @media (max-width: 768px) {
-            .hero .hero-wordmark { font-size: 58px; }
-        }
 
         .hero-tag {
             font-size: 13px;
@@ -625,8 +609,8 @@
         .overview-card h3 { font-family: var(--serif-font); font-size: 26px; font-weight: 600; margin-bottom: 10px; }
         .overview-card p { font-size: 15px; color: #4A5568; font-weight: 300; margin-bottom: 20px; flex-grow: 1; }
         .overview-link { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sea-glass); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
-        .hero h1.hero-tagline { font-size: 32px; line-height: 1.25; color: #0A0D5E; margin-top: -6px; }
-        @media (max-width: 768px) { .hero h1.hero-tagline { font-size: 24px; } }
+        .hero h1.hero-tagline { font-size: 60px; font-weight: 600; line-height: 1.1; color: #0A0D5E; }
+        @media (max-width: 768px) { .hero h1.hero-tagline { font-size: 40px; } }
         /* Brand navy from the business card */
         :root { --brand-navy: #0A0D5E; }
         h1, h2, h3, .section-title { color: var(--brand-navy); }
@@ -702,14 +686,9 @@
     <main>
         <section class="hero">
             <div class="hero-title-container">
-                <p class="hero-wordmark">SB Tech Gal</p>
                 <h1 class="hero-tagline">IT Solutions for Home and Business</h1>
             </div>
 
-            <div class="split-container">
-                <a href="residential.html" class="btn-path btn-home">Residential IT Services</a>
-                <a href="commercial.html" class="btn-path btn-business">Commercial IT Services</a>
-            </div>
             <div class="start-wrap">
                 <a href="services.html" class="btn-path btn-start">Not sure where to begin? Start here</a>
             </div>
