@@ -627,6 +627,12 @@
         .overview-link { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sea-glass); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
         .hero h1.hero-tagline { font-size: 32px; line-height: 1.25; color: #0A0D5E; margin-top: -6px; }
         @media (max-width: 768px) { .hero h1.hero-tagline { font-size: 24px; } }
+        /* Brand navy from the business card */
+        :root { --brand-navy: #0A0D5E; }
+        h1, h2, h3, .section-title { color: var(--brand-navy); }
+        .btn-business, .submit-btn { background-color: var(--brand-navy); border-color: var(--brand-navy); }
+        .cta-btn-nav { border-color: var(--brand-navy) !important; color: var(--brand-navy) !important; }
+        .cta-btn-nav:hover { background-color: var(--brand-navy); color: var(--pure-white) !important; }
     </style>
 
     <script type="application/ld+json">
@@ -778,6 +784,7 @@
 
    <footer>
     <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
+        <p style="margin-top: 12px;">By appointment: 924 Anacapa St, Suite G1, Santa Barbara, CA 93101</p>
         <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
             <strong>Our Service Areas:</strong><br>
             <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
