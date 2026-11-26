@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | SB Tech Gal, Santa Barbara IT Services</title>
+    <meta name="description" content="Answers to common questions about SB Tech Gal: services, service areas from Santa Maria to Westlake Village, certifications, insurance, device donation and how to get started.">
+    <link rel="canonical" href="https://thesbtechgal.com/faq">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thesbtechgal.com/faq">
+    <meta property="og:title" content="Frequently Asked Questions | SB Tech Gal">
+    <meta property="og:description" content="Answers to common questions about SB Tech Gal: services, service areas from Santa Maria to Westlake Village, certifications, insurance, device donation and how to get started.">
+    <meta property="og:image" content="https://thesbtechgal.com/LOGO.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --slate-charcoal: #2A2F35; 
+            --sea-glass: #5A7E7A;       
+            --montecito-sand: #F9F6F0;  
+            --pure-white: #FFFFFF;
+            --border-gold: #D4AF37;     
+            --muted-gray: #718096;
+            
+            --serif-font: 'Cormorant Garamond', Georgia, serif;
+            --sans-font: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: var(--slate-charcoal);
+            background-color: var(--pure-white);
+            font-family: var(--sans-font);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* Top Luxury Accent Bar */
+        .top-accent-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--sea-glass), var(--border-gold));
+        }
+
+        /* Sticky Premium Navigation Header */
+        header {
+            background-color: var(--pure-white);
+            border-bottom: 1px solid #ECE7E1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-family: var(--serif-font);
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--slate-charcoal);
+            text-decoration: none;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        .logo span {
+            color: var(--sea-glass);
+            font-weight: 400;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--slate-charcoal);
+            margin-left: 30px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sea-glass);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .cta-btn-nav {
+            border: 1px solid var(--slate-charcoal);
+            padding: 10px 24px;
+            font-size: 11px !important;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-nav:hover {
+            background-color: var(--slate-charcoal);
+            color: var(--pure-white);
+        }
+
+        /* Hero Section Layout */
+        .hero {
+            --hero-veil: radial-gradient(ellipse 60% 70% at center, rgba(250, 247, 242, 0.88) 0%, rgba(250, 247, 242, 0.80) 55%, rgba(250, 247, 242, 0.45) 100%);
+            background-color: var(--montecito-sand);
+            background-image:
+                var(--hero-veil),
+                url("img/coaching-illustration-1600.webp");
+            background-size: cover;
+            background-position: center 45%;
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 1px solid #ECE7E1;
+        }
+
+        @media (min-width: 1700px) {
+            .hero {
+                background-image:
+                    var(--hero-veil),
+                    url("img/coaching-illustration-2400.webp");
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                background-image:
+                    var(--hero-veil),
+                    url("img/coaching-illustration-1000.webp");
+                background-position: 45% center;
+            }
+        }
+
+        .hero-title-container {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;    
+            justify-content: center;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 25px auto;
+        }
+        .hero .hero-wordmark {
+            font-family: var(--serif-font);
+            font-size: 72px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            color: var(--slate-charcoal);
+            margin: 0;
+        }
+        .hero .hero-wordmark span {
+            color: var(--sea-glass);
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            .hero .hero-wordmark { font-size: 46px; }
+        }
+
+        .hero-tag {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--sea-glass);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: var(--serif-font);
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.15;
+            max-width: 900px;    
+            text-align: center;  
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 45px auto;
+            color: #555F6D;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* Call To Action Container */
+        .split-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-path {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            min-width: 270px;
+        }
+
+        .btn-home {
+            background-color: transparent;
+            color: var(--slate-charcoal);
+            border: 1px solid var(--slate-charcoal);
+        }
+
+        .btn-home:hover {
+            background-color: var(--pure-white);
+            border-color: var(--sea-glass);
+            color: var(--sea-glass);
+        }
+
+        .btn-business {
+            background-color: var(--slate-charcoal);
+            color: var(--pure-white);
+            border: 1px solid var(--slate-charcoal);
+        }
+
+        .btn-business:hover {
+            background-color: var(--sea-glass);
+            border-color: var(--sea-glass);
+        }
+
+        .start-wrap {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn-start {
+            background-color: transparent;
+            color: #46665F;
+            border: 1px solid #46665F;
+            min-width: 0;
+            padding: 18px 40px;
+        }
+
+        .btn-start:hover {
+            background-color: #46665F;
+            color: var(--pure-white);
+        }
+
+        /* Editorial Content Grid Layout */
+        .section-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .section-header-box {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-title {
+            font-family: var(--serif-font);
+            font-size: 40px;
+            font-weight: 400;
+            color: var(--slate-charcoal);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--muted-gray);
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Standard Grid for Commercial Section */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .editorial-card {
+            background: var(--pure-white);
+            border-top: 3px solid var(--sea-glass);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.015);
+            padding: 40px 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card {
+            background: transparent !important;
+            border-top: none !important;
+            box-shadow: none !important;
+            padding: 20px 10px !important;
+        }
+
+        .editorial-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .editorial-card h3 {
+            font-family: var(--serif-font);
+            color: var(--slate-charcoal);
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .editorial-card ul {
+            list-style-type: none;
+        }
+
+        .editorial-card ul li {
+            margin-bottom: 14px;
+            font-size: 15px;
+            color: #4A5568;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 22px;
+        }
+
+        .editorial-card ul li::before {
+            content: "—";
+            color: var(--border-gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .bg-linen {
+            background-color: var(--montecito-sand);
+        }
+
+        /* Clean Luxury Contact Infrastructure */
+        .contact-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .form-field, .form-row {
+            margin-bottom: 25px;
+        }
+
+        .form-field label, .form-row label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--slate-charcoal);
+        }
+
+        .form-field input[type="email"], 
+        .form-field input[type="tel"], 
+        .form-row input[type="email"], 
+        .form-field select, 
+        .form-field textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #D1C9BF;
+            background-color: var(--pure-white);
+            font-size: 15px;
+            color: var(--slate-charcoal);
+            font-family: var(--sans-font);
+            transition: all 0.3s ease;
+        }
+
+        .form-field input:focus, .form-row input:focus, .form-field select:focus, .form-field textarea:focus {
+            outline: none;
+            border-color: var(--sea-glass);
+            box-shadow: 0 0 0 3px rgba(90, 126, 122, 0.1);
+        }
+
+        /* Radio Button Styling Adjustments */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        .radio-label {
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            text-transform: none !important;
+            letter-spacing: 0px !important;
+            display: flex !important;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--slate-charcoal);
+        }
+
+        .radio-label input[type="radio"] {
+            accent-color: var(--sea-glass);
+            width: 16px;
+            height: 16px;
+        }
+
+        .submit-btn {
+            background-color: var(--slate-charcoal);
+            color: var(--pure-white);
+            border: none;
+            padding: 18px 36px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--sea-glass);
+        }
+
+        /* Footer Element */
+        footer {
+            background-color: #1F2326;
+            color: #9299A2;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 13px;
+            border-top: 1px solid #2D3237;
+            letter-spacing: 1px;
+        }
+
+        /* Premium Estate Split Layout Engine */
+        .estate-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .estate-visual-column {
+            position: sticky;
+            top: 140px;
+            text-align: center;
+        }
+
+        .tile-wrapper {
+            background-color: var(--montecito-sand);
+            padding: 40px;
+            border: 1px solid #ECE7E1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            display: inline-block;
+        }
+        
+        .bg-linen .tile-wrapper {
+            background-color: var(--pure-white);
+        }
+
+        .brand-tile-art {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .tile-caption {
+            font-family: var(--serif-font);
+            font-style: italic;
+            font-size: 16px;
+            color: var(--sea-glass);
+            margin-top: 20px;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .section-header-left {
+            margin-bottom: 40px;
+        }
+
+        .section-header-left .section-title {
+            text-align: left;
+        }
+
+        .estate-pillars-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+        }
+
+        .estate-pillar-item h3 {
+            font-family: var(--serif-font);
+            font-size: 26px;
+            color: var(--slate-charcoal);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ECE7E1;
+            padding-bottom: 8px;
+        }
+
+        .estate-pillar-item ul {
+            list-style: none;
+        }
+
+        .estate-pillar-item ul li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: #4A5568;
+            position: relative;
+            padding-left: 24px;
+            font-weight: 300;
+        }
+
+        .estate-pillar-item ul li::before {
+            content: "—";
+            color: var(--border-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Tweak for Contextual Left-Hand Call To Action Alignment */
+        .estate-cta-wrapper {
+            margin-top: 30px;
+        }
+
+        /* Responsive Mobile Layout Engine */
+        @media (max-width: 992px) {
+            .estate-split-layout {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .estate-visual-column {
+                position: static;
+                order: 2;
+            }
+            .section-header-left .section-title,
+            .section-header-left {
+                text-align: center;
+            }
+            .hero-title-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { 
+                flex-direction: column; 
+                gap: 20px; 
+                padding: 20px; 
+            }
+            nav a { 
+                margin: 0 10px; 
+                font-size: 12px; 
+            }
+            .hero h1 { 
+                font-size: 36px; 
+            }
+            .section-title { 
+                font-size: 32px; 
+            }
+            .section-container {
+                padding: 60px 20px;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Phone menu */
+        .menu-toggle { display: none; background: none; border: 1px solid var(--slate-charcoal); color: var(--slate-charcoal); font-family: var(--sans-font); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 9px 14px; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0; padding: 16px 20px; }
+            .logo { font-size: 22px; }
+            .menu-toggle { display: inline-block; }
+            nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 12px; }
+            nav.open { display: flex; }
+            nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
+            nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
+        }
+        .logo-mark { display: inline-flex; align-items: center; }
+        .logo-mark img { display: block; width: 64px; height: 64px; }
+        @media (max-width: 768px) { .logo-mark img { width: 52px; height: 52px; } }
+        .page-cta { text-align: center; padding: 70px 20px; }
+        .page-cta h2 { font-family: var(--serif-font); font-size: 36px; font-weight: 400; margin-bottom: 12px; }
+        .page-cta p { color: #4A5568; font-weight: 300; margin: 0 auto 28px auto; max-width: 560px; }
+        .page-cta a.phone { color: var(--slate-charcoal); font-weight: 500; }
+        nav a[aria-current="page"] { color: var(--sea-glass); }
+    </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does SB Tech Gal do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SB Tech Gal offers computer repair, Wi-Fi design, data backup, security hardening, managed IT and compliance support for homes and small businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We serve clients from Santa Maria to Westlake Village, both in person and remotely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All work is performed by a technician holding CompTIA Security+, Network+ and A+ credentials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SB Tech Gal carries Errors & Omissions (E&O) and Cyber Liability insurance. Certificates of insurance are available on request."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my old devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We securely erase all of your data, refurbish the device, and through our partnership with Women's Economic Ventures (WEV), donate it to a local resident who cannot afford new equipment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call (805) 225-7885, email Maggie@thesbtechgal.com, or use the contact form on our home page. You will receive a detailed quote up front."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="/" class="logo logo-mark"><img src="img/logo-round-160.webp" alt="Santa Barbara Tech Gal home" width="64" height="64"></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
+                <a href="residential.html">Residential</a>
+                <a href="commercial.html">Commercial</a>
+                <a href="repair-builds.html">Repair &amp; Builds</a>
+                <a href="services.html">Services</a>
+                <a href="why-sb-tech-gal.html">Why SB Tech Gal</a>
+                <a href="gift-certificates.html">Gift Certificates</a>
+                <a href="/#concierge" class="cta-btn-nav">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="faq-section" class="section-container">
+            <div class="section-header-box">
+                <h1 class="section-title">Frequently Asked Questions</h1>
+                
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px;">
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">What does SB Tech Gal do?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">SB Tech Gal offers computer repair, Wi-Fi design, data backup, security hardening, managed IT and compliance support for homes and small businesses.</p>
+                </article>
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Where do you work?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">We serve clients from Santa Maria to Westlake Village, both in person and remotely.</p>
+                </article>
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Are you certified?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Yes. All work is performed by a technician holding CompTIA Security+, Network+ and A+ credentials.</p>
+                </article>
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Are you insured?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Yes. SB Tech Gal carries Errors &amp; Omissions (E&amp;O) and Cyber Liability insurance. Certificates of insurance are available on request.</p>
+                </article>
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">What happens to my old devices?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">We securely erase all of your data, refurbish the device, and through our partnership with Women's Economic Ventures (WEV), donate it to a local resident who cannot afford new equipment.</p>
+                </article>
+                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
+                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">How do I get started?</h3>
+                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Call (805) 225-7885, email Maggie@thesbtechgal.com, or use the <a href="/#concierge" style="color: var(--slate-charcoal); font-weight: 500;">contact form on our home page</a>. You will receive a detailed quote up front.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="page-cta bg-linen">
+            <h2>Ready to get started?</h2>
+            <p>Tell us what you need, and you will receive a written estimate before any work begins. You can also call <a class="phone" href="tel:+18052257885">(805) 225-7885</a>.</p>
+            <a href="/#concierge" class="btn-path btn-business">Contact Us</a>
+        </section>
+    </main>
+
+   <footer>
+    <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
+        <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
+            <strong>Our Service Areas:</strong><br>
+            <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
+            <span style="color: var(--border-gold);">Ventura County and Westlake:</span> Ventura, Oxnard, Camarillo, Ojai, Thousand Oaks, Westlake Village
+        </p>
+        <p class="footer-links" style="margin-top: 12px;"><a href="faq.html" style="color: inherit;">Frequently Asked Questions</a></p>
+    </footer>
+
+    <script>
+        (function () {
+            var b = document.querySelector('.menu-toggle'), n = document.getElementById('site-nav');
+            if (!b || !n) return;
+            b.addEventListener('click', function () {
+                var open = n.classList.toggle('open');
+                b.setAttribute('aria-expanded', open ? 'true' : 'false');
+                b.textContent = open ? 'Close' : 'Menu';
+            });
+            n.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.textContent = 'Menu'; }
+            });
+        })();
+    </script>
+</body>
+</html>
