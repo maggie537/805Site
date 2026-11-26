@@ -168,11 +168,21 @@
             max-width: 1100px;
             margin: 0 auto 25px auto;
         }
-        .hero-logo {
-            max-height: 260px;
-            width: auto;
-            object-fit: contain;
-            clip-path: circle(48.5% at 50% 50%);
+        .hero .hero-wordmark {
+            font-family: var(--serif-font);
+            font-size: 72px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            color: var(--slate-charcoal);
+            margin: 0;
+        }
+        .hero .hero-wordmark span {
+            color: var(--sea-glass);
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            .hero .hero-wordmark { font-size: 46px; }
         }
 
         .hero-tag {
@@ -600,6 +610,9 @@
             nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
             nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
         }
+        .logo-mark { display: inline-flex; align-items: center; }
+        .logo-mark img { display: block; width: 64px; height: 64px; }
+        @media (max-width: 768px) { .logo-mark img { width: 52px; height: 52px; } }
     </style>
 
     <script type="application/ld+json">
@@ -708,7 +721,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <a href="/" class="logo logo-mark"><img src="img/logo-round-160.webp" alt="Santa Barbara Tech Gal home" width="64" height="64"></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
             <nav id="site-nav">
                 <a href="#estate-services">Residential</a>
@@ -725,7 +738,7 @@
     <main>
         <section class="hero">
             <div class="hero-title-container">
-                <img src="LOGO.png" alt="SB Tech Gal Logo" class="hero-logo" style="margin-bottom: 10px;">
+                <p class="hero-wordmark">Santa Barbara <span>Tech Gal</span></p>
                 <h1>Complete IT Solutions for Home and Business</h1>
             </div>
 
