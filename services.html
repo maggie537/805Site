@@ -198,7 +198,14 @@
         .cta-btn-nav { border-color: var(--brand-navy) !important; color: var(--brand-navy) !important; }
         .cta-btn-nav:hover { background-color: var(--brand-navy); color: var(--pure-white) !important; }
         footer .footer-logo { display: block; width: 96px; height: 96px; margin: 0 auto 18px auto; }
-    </style>
+            .how-steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 900px; margin: 4px auto 26px auto; padding: 0; text-align: left; }
+        .how-steps li { background: var(--pure-white); border: 1px solid #ECE7E1; border-top: 3px solid var(--brand-navy); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+        .how-num { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-navy); color: var(--pure-white); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+        .how-head { font-family: var(--serif-font); font-size: 21px; color: var(--brand-navy); line-height: 1.25; }
+        .how-text { font-size: 15px; color: #4A5568; font-weight: 300; line-height: 1.6; }
+        .submit-note { text-align: center; margin: 14px 0 0; font-size: 14px; color: #5A6575; font-weight: 300; line-height: 1.6; }
+        @media (max-width: 760px) { .how-steps { grid-template-columns: 1fr; gap: 12px; } }
+</style>
 </head>
 <body>
 
@@ -222,7 +229,11 @@
     <main>
         <section class="hero">
             <h1>Technology support, without the guesswork.</h1>
-            <p>Choose what you need below, or simply describe it in your own words.</p>
+            <ol class="how-steps" aria-label="How it works">
+                <li><span class="how-num">1</span><span class="how-head">Choose what you need</span><span class="how-text">Open any category and select the services that fit, or describe the problem in your own words.</span></li>
+                <li><span class="how-num">2</span><span class="how-head">Send your request</span><span class="how-text">Add your contact details at the bottom of the page and press Submit Request.</span></li>
+                <li><span class="how-num">3</span><span class="how-head">We reach out</span><span class="how-text">Your request comes directly to us, and we will contact you by email, text or phone, whichever you prefer.</span></li>
+            </ol>
             <a href="#concierge" class="btn-path btn-home" id="writeItOut">I’d rather write it out</a>
         </section>
 
@@ -270,7 +281,7 @@
             <div class="contact-inner">
                 <div class="section-header-box" style="margin-bottom: 40px;">
                     <h2 class="section-title">Send Your Request</h2>
-                    <p class="section-subtitle">Choose services above, or simply describe what’s happening in your own words.</p>
+                    <p class="section-subtitle">Choose services above, or simply describe what is happening in your own words.</p>
                 </div>
 
                 <div class="list-box" id="listBox" hidden>
@@ -309,8 +320,9 @@
                         <label class="lbl" for="fNote" id="noteLbl">Anything else we should know? (optional)</label>
                         <textarea id="fNote" name="description" rows="4" placeholder="In your own words, what’s happening?"></textarea>
                     </div>
-                    <p class="fine" style="margin:0 0 20px;max-width:none;">You’ll get a clear recommendation and a written estimate before any work begins. Parts, repairs beyond the listed scope and software subscriptions are quoted separately. No scan or software can guarantee that every threat is found.</p>
+                    <p class="fine" style="margin:0 0 20px;max-width:none;">You will get a clear recommendation and a written estimate before any work begins. Parts, repairs beyond the listed scope and software subscriptions are quoted separately. No scan or software can guarantee that every threat is found.</p>
                     <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+                    <p class="submit-note">Once you submit, your request comes straight to us. We will review what you selected and reach out using the contact method you chose to talk through next steps.</p>
                 </form>
                 <p class="call-line">Prefer to talk? Call <a href="tel:8052257885">(805) 225-7885</a> or email <a href="mailto:Maggie@thesbtechgal.com">Maggie@thesbtechgal.com</a></p>
             </div>
