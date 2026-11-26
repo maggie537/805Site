@@ -603,9 +603,14 @@
             nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
             nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
         }
-        .logo-mark { display: inline-flex; align-items: center; }
-        .logo-mark img { display: block; width: 64px; height: 64px; }
-        @media (max-width: 768px) { .logo-mark img { width: 52px; height: 52px; } }
+        .logo-mark { display: inline-flex; align-items: center; gap: 14px; }
+        .logo-mark img { display: block; width: 72px; height: 72px; }
+        .logo-mark .logo-text { font-family: var(--serif-font); font-size: 30px; font-weight: 600; color: #0A0D5E; letter-spacing: 0.5px; white-space: nowrap; }
+        @media (max-width: 768px) {
+            .logo-mark { gap: 10px; }
+            .logo-mark img { width: 52px; height: 52px; }
+            .logo-mark .logo-text { font-size: 24px; }
+        }
         .page-cta { text-align: center; padding: 70px 20px; }
         .page-cta h2 { font-family: var(--serif-font); font-size: 36px; font-weight: 400; margin-bottom: 12px; }
         .page-cta p { color: #4A5568; font-weight: 300; margin: 0 auto 28px auto; max-width: 560px; }
@@ -674,7 +679,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo logo-mark"><img src="img/logo-round-160.webp" alt="Santa Barbara Tech Gal home" width="64" height="64"></a>
+            <a href="/" class="logo logo-mark" aria-label="SB Tech Gal home"><img src="img/logo-round-240.webp" alt="" width="72" height="72"><span class="logo-text">SB Tech Gal</span></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
             <nav id="site-nav">
                 <a href="residential.html">Residential</a>
