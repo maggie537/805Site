@@ -168,6 +168,13 @@
         .cta-btn-nav { border-color: var(--brand-navy) !important; color: var(--brand-navy) !important; }
         .cta-btn-nav:hover { background-color: var(--brand-navy); color: var(--pure-white) !important; }
         footer .footer-logo { display: block; width: 96px; height: 96px; margin: 0 auto 18px auto; }
+        /* Payment step trust touches (styling only; payment scripts unchanged) */
+        .btn-solid { background: var(--brand-navy); border-color: var(--brand-navy); }
+        #s3:not([hidden]) ~ #navBtns #nextBtn::before { content: ""; display: inline-block; width: 14px; height: 14px; margin: 0 10px -2px 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='7' width='10' height='7' rx='1.5' fill='%23ffffff'/%3E%3Cpath d='M5 7V5a3 3 0 0 1 6 0v2' fill='none' stroke='%23ffffff' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat center / contain; }
+        #cardStatus::before { content: ""; display: inline-block; width: 13px; height: 13px; margin: 0 7px -2px 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='7' width='10' height='7' rx='1.5' fill='%230A0D5E'/%3E%3Cpath d='M5 7V5a3 3 0 0 1 6 0v2' fill='none' stroke='%230A0D5E' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat center / contain; }
+        #cardStatus:empty::before { display: none; }
+        .pay-extras { margin-top: 8px; font-size: 13px; color: #4A5568; font-weight: 300; }
+        .pay-extras a { color: var(--brand-navy); font-weight: 500; }
     </style>
 </head>
 <body>
@@ -259,6 +266,8 @@
                         <p class="step-sub">Card details go straight to Square and never touch this website.</p>
                         <div id="card-container"></div>
                         <p class="secure-note" id="cardStatus">Loading secure card form...</p>
+                        <p class="pay-extras">Major credit and debit cards accepted.</p>
+                        <p class="pay-extras">Questions before you pay? Call <a href="tel:8052257885">(805) 225-7885</a>.</p>
                     </section>
 
                     <div class="error" id="error" role="alert" hidden></div>
