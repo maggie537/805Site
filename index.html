@@ -170,11 +170,11 @@
         }
         .hero .hero-wordmark {
             font-family: var(--serif-font);
-            font-size: 72px;
+            font-size: 88px;
             font-weight: 600;
             letter-spacing: 1px;
-            line-height: 1.05;
-            color: var(--slate-charcoal);
+            line-height: 1;
+            color: #0A0D5E;
             margin: 0;
         }
         .hero .hero-wordmark span {
@@ -182,7 +182,7 @@
             font-weight: 400;
         }
         @media (max-width: 768px) {
-            .hero .hero-wordmark { font-size: 46px; }
+            .hero .hero-wordmark { font-size: 58px; }
         }
 
         .hero-tag {
@@ -610,9 +610,14 @@
             nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
             nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
         }
-        .logo-mark { display: inline-flex; align-items: center; }
-        .logo-mark img { display: block; width: 64px; height: 64px; }
-        @media (max-width: 768px) { .logo-mark img { width: 52px; height: 52px; } }
+        .logo-mark { display: inline-flex; align-items: center; gap: 14px; }
+        .logo-mark img { display: block; width: 72px; height: 72px; }
+        .logo-mark .logo-text { font-family: var(--serif-font); font-size: 30px; font-weight: 600; color: #0A0D5E; letter-spacing: 0.5px; white-space: nowrap; }
+        @media (max-width: 768px) {
+            .logo-mark { gap: 10px; }
+            .logo-mark img { width: 52px; height: 52px; }
+            .logo-mark .logo-text { font-size: 24px; }
+        }
         .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
         .overview-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--pure-white); border: 1px solid #ECE7E1; border-top: 3px solid var(--sea-glass); padding: 36px 28px; text-decoration: none; color: var(--slate-charcoal); transition: transform 0.2s ease, box-shadow 0.2s ease; scroll-margin-top: 120px; }
         .overview-card:hover, .overview-card:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(42, 47, 53, 0.08); }
@@ -620,6 +625,14 @@
         .overview-card h3 { font-family: var(--serif-font); font-size: 26px; font-weight: 600; margin-bottom: 10px; }
         .overview-card p { font-size: 15px; color: #4A5568; font-weight: 300; margin-bottom: 20px; flex-grow: 1; }
         .overview-link { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sea-glass); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+        .hero h1.hero-tagline { font-size: 32px; line-height: 1.25; color: #0A0D5E; margin-top: -6px; }
+        @media (max-width: 768px) { .hero h1.hero-tagline { font-size: 24px; } }
+        /* Brand navy from the business card */
+        :root { --brand-navy: #0A0D5E; }
+        h1, h2, h3, .section-title { color: var(--brand-navy); }
+        .btn-business, .submit-btn { background-color: var(--brand-navy); border-color: var(--brand-navy); }
+        .cta-btn-nav { border-color: var(--brand-navy) !important; color: var(--brand-navy) !important; }
+        .cta-btn-nav:hover { background-color: var(--brand-navy); color: var(--pure-white) !important; }
     </style>
 
     <script type="application/ld+json">
@@ -672,7 +685,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo logo-mark"><img src="img/logo-round-160.webp" alt="Santa Barbara Tech Gal home" width="64" height="64"></a>
+            <a href="/" class="logo logo-mark" aria-label="SB Tech Gal home"><img src="img/logo-round-240.webp" alt="" width="72" height="72"><span class="logo-text">SB Tech Gal</span></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
             <nav id="site-nav">
                 <a href="residential.html">Residential</a>
@@ -689,8 +702,8 @@
     <main>
         <section class="hero">
             <div class="hero-title-container">
-                <p class="hero-wordmark">Santa Barbara <span>Tech Gal</span></p>
-                <h1>Complete IT Solutions for Home and Business</h1>
+                <p class="hero-wordmark">SB Tech Gal</p>
+                <h1 class="hero-tagline">IT Solutions for Home and Business</h1>
             </div>
 
             <div class="split-container">
@@ -764,9 +777,6 @@
 
                     <button type="submit" class="submit-btn">Submit Request</button>
                 </form>
-                <p style="text-align:center; margin-top:22px; font-size:14px; color:#4A5568; font-weight:300;">
-                    Want the full list? <a href="services.html" style="color:var(--slate-charcoal); font-weight:500;">See everything we offer</a>
-                </p>
             </div>
         </section>
 
@@ -774,6 +784,7 @@
 
    <footer>
     <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&O and Cyber Liability)</p>
+        <p style="margin-top: 12px;">By appointment: 924 Anacapa St, Suite G1, Santa Barbara, CA 93101</p>
         <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
             <strong>Our Service Areas:</strong><br>
             <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
