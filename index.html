@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://thesbtechgal.com">
     <meta name="twitter:title" content="SB Tech Gal | Premium Home Wi-Fi & Business IT Solutions">
-    <meta name="twitter:description" content="Certified IT services, estate cybersecurity, whole-home Wi-Fi setups, and business compliance.">
+    <meta name="twitter:description" content="Certified, insured computer services in Santa Barbara and Ventura Counties: computer repair, home Wi-Fi, cybersecurity and small business IT.">
     <meta name="twitter:image" content="https://thesbtechgal.com/LOGO.png">
 
     <link rel="icon" type="image/png" href="LOGO.png">
@@ -130,10 +130,33 @@
 
         /* Hero Section Layout */
         .hero {
+            --hero-veil: radial-gradient(ellipse 60% 70% at center, rgba(250, 247, 242, 0.88) 0%, rgba(250, 247, 242, 0.80) 55%, rgba(250, 247, 242, 0.45) 100%);
             background-color: var(--montecito-sand);
+            background-image:
+                var(--hero-veil),
+                url("img/coaching-illustration-1600.webp");
+            background-size: cover;
+            background-position: center 45%;
             text-align: center;
             padding: 120px 20px;
             border-bottom: 1px solid #ECE7E1;
+        }
+
+        @media (min-width: 1700px) {
+            .hero {
+                background-image:
+                    var(--hero-veil),
+                    url("img/coaching-illustration-2400.webp");
+            }
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                background-image:
+                    var(--hero-veil),
+                    url("img/coaching-illustration-1000.webp");
+                background-position: 45% center;
+            }
         }
 
         .hero-title-container {
@@ -145,10 +168,21 @@
             max-width: 1100px;
             margin: 0 auto 25px auto;
         }
-        .hero-logo {
-            max-height: 300px;
-            width: auto;
-            object-fit: contain;
+        .hero .hero-wordmark {
+            font-family: var(--serif-font);
+            font-size: 72px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            color: var(--slate-charcoal);
+            margin: 0;
+        }
+        .hero .hero-wordmark span {
+            color: var(--sea-glass);
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            .hero .hero-wordmark { font-size: 46px; }
         }
 
         .hero-tag {
@@ -576,6 +610,16 @@
             nav a { margin: 0; padding: 14px 4px; font-size: 12px; border-top: 1px solid #ECE7E1; text-align: left; }
             nav a.cta-btn-nav { margin-top: 12px; text-align: center; border: 1px solid var(--slate-charcoal); }
         }
+        .logo-mark { display: inline-flex; align-items: center; }
+        .logo-mark img { display: block; width: 64px; height: 64px; }
+        @media (max-width: 768px) { .logo-mark img { width: 52px; height: 52px; } }
+        .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1100px; margin: 0 auto; }
+        .overview-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--pure-white); border: 1px solid #ECE7E1; border-top: 3px solid var(--sea-glass); padding: 36px 28px; text-decoration: none; color: var(--slate-charcoal); transition: transform 0.2s ease, box-shadow 0.2s ease; scroll-margin-top: 120px; }
+        .overview-card:hover, .overview-card:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(42, 47, 53, 0.08); }
+        .overview-card img { width: 150px; height: auto; margin-bottom: 20px; }
+        .overview-card h3 { font-family: var(--serif-font); font-size: 26px; font-weight: 600; margin-bottom: 10px; }
+        .overview-card p { font-size: 15px; color: #4A5568; font-weight: 300; margin-bottom: 20px; flex-grow: 1; }
+        .overview-link { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--sea-glass); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
     </style>
 
     <script type="application/ld+json">
@@ -622,74 +666,18 @@
     }
     </script>
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does SB Tech Gal do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SB Tech Gal offers computer repair, Wi-Fi design, data backup, security hardening, managed IT and compliance support for homes and small businesses."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where do you work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We serve clients from Santa Maria to Westlake Village, both in person and remotely."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are you certified?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. All work is performed by a technician holding CompTIA Security+, Network+ and A+ credentials."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are you insured?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. SB Tech Gal carries Errors & Omissions (E&O) and Cyber Liability insurance. Certificates of insurance are available on request."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens to my old devices?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We securely erase all of your data, refurbish the device, and through our partnership with Women's Economic Ventures (WEV), donate it to a local resident who cannot afford new equipment."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get started?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Call (805) 225-7885, email Maggie@thesbtechgal.com, or use the form above. You will receive a detailed quote up front."
-      }
-    }
-  ]
-}
-    </script>
 </head>
 <body>
 
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <a href="/" class="logo logo-mark"><img src="img/logo-round-160.webp" alt="Santa Barbara Tech Gal home" width="64" height="64"></a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
             <nav id="site-nav">
-                <a href="#estate-services">Residential</a>
-                <a href="#commercial-services">Commercial</a>
-                <a href="#sustainability-craft">Repair & Builds</a>
+                <a href="residential.html">Residential</a>
+                <a href="commercial.html">Commercial</a>
+                <a href="repair-builds.html">Repair &amp; Builds</a>
                 <a href="services.html">Services</a>
                 <a href="why-sb-tech-gal.html">Why SB Tech Gal</a>
                 <a href="gift-certificates.html">Gift Certificates</a>
@@ -701,173 +689,43 @@
     <main>
         <section class="hero">
             <div class="hero-title-container">
-                <img src="LOGO.png" alt="SB Tech Gal Logo" class="hero-logo" style="margin-bottom: 10px;">
+                <p class="hero-wordmark">Santa Barbara <span>Tech Gal</span></p>
                 <h1>Complete IT Solutions for Home and Business</h1>
             </div>
 
             <div class="split-container">
-                <a href="#estate-services" class="btn-path btn-home">Residential IT Services</a>
-                <a href="#commercial-services" class="btn-path btn-business">Commercial IT Services</a>
+                <a href="residential.html" class="btn-path btn-home">Residential IT Services</a>
+                <a href="commercial.html" class="btn-path btn-business">Commercial IT Services</a>
             </div>
             <div class="start-wrap">
                 <a href="services.html" class="btn-path btn-start">Not sure where to begin? Start here</a>
             </div>
         </section>
         
-        <section id="estate-services" class="section-container">
-            <div class="estate-split-layout">
-                <div class="estate-visual-column">
-                    <div class="tile-wrapper">
-                        <img src="homewifi.png" alt="Santa Barbara Smart Home Tech Tile Art" class="brand-tile-art" style="width: 220px; margin: 0 auto;">
-                    </div>
-                    <div class="estate-cta-wrapper">
-                        <a href="#concierge" class="btn-path btn-business">Contact Us</a>
-                    </div>
-                </div>
-
-                <div class="estate-text-column">
-                    <div class="section-header-left">
-                        <h2 class="section-title">Residential IT Services</h2>
-                        <p class="section-subtitle">Thoughtful care for your household and everything connected to it.</p>
-                    </div>
-                    
-          
-                   <div class="estate-pillars-stack">
-                        <div class="estate-pillar-item">
-                            <h3>Patient One-on-One Coaching</h3>
-                            <ul>
-                                <li>Sit side by side and learn your own computer, free of jargon.</li>
-                                <li>Navigate everyday tasks with growing confidence, at a relaxed pace.</li>
-                                <li>Keep step-by-step reference guides tailored to your setup.</li>
-                                <li>Get comfortable with a new phone, tablet or voice assistant.</li>
-                            </ul>
-                        </div>
-
-                        <div class="estate-pillar-item">
-                            <h3>Whole-Home Wi-Fi</h3>
-                            <ul>
-                                <li>Enjoy stronger coverage with fewer dead spots.</li>
-                                <li>Stream, game and video call at the same time.</li>
-                                <li>Give houseguests a private network of their own.</li>
-                            </ul>
-                        </div>
-
-                        <div class="estate-pillar-item">
-                            <h3>Privacy and Cybersecurity</h3>
-                            <ul>
-                                <li>An in-home visit to find security weak points, followed by suggestions suited to your household.</li>
-                                <li>Shield your home network from common threats.</li>
-                                <li>Back up photos and important documents automatically.</li>
-                                <li>Safeguard smart TVs, cameras and door locks.</li>
-                            </ul>
-                        </div>
-
-                        <div class="estate-pillar-item">
-                            <h3>On-Demand Assistance and Installation</h3>
-                            <ul>
-                                <li>Transfer files and contacts safely to a replacement device.</li>
-                                <li>Speed up a sluggish machine with a tune-up.</li>
-                                <li>Wipe retired phones and computers before you sell or recycle them.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <section id="what-we-do" class="section-container">
+            <div class="section-header-box">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Choose the area that fits you to see the full details.</p>
             </div>
-        </section>
-
-       <section id="commercial-services" class="section-container bg-linen">
-            <div class="estate-split-layout">
-                <div class="estate-visual-column">
-                    <div class="tile-wrapper">
-                        <img src="business.png" alt="Santa Barbara Commercial Tech Tile Art" style="display: block; margin: 0 auto 25px auto; max-width: 200px; height: auto;">
-                    </div>
-                    <div class="estate-cta-wrapper">
-                        <a href="#concierge" class="btn-path btn-business">Contact Us</a>
-                        <p style="font-size: 14px; color: var(--muted-gray); margin-top: 10px; font-weight: 300;">You receive a written estimate before any work begins.</p>
-                    </div>
-                </div>
-
-                <div class="estate-text-column">
-                    <div class="section-header-left">
-                        <h2 class="section-title">Commercial IT Solutions</h2>
-                        <p class="section-subtitle">Dependable technology management for small offices and growing teams.</p>
-                    </div>
-
-                    <div class="estate-pillars-stack">
-                        <div class="estate-pillar-item">
-                            <h3>Workplace Continuity</h3>
-                            <ul>
-                                <li>Remote and on-site troubleshooting for your staff.</li>
-                                <li>Equipment provisioning and responsible retirement.</li>
-                                <li>Microsoft 365 and Google Workspace administration.</li>
-                                <li>Organized records of your hardware and software.</li>
-                            </ul>
-                        </div>
-
-                        <div class="estate-pillar-item">
-                            <h3>Business Networking</h3>
-                            <ul>
-                                <li>Professional-grade firewalls that guard company data.</li>
-                                <li>Separate networks for visitors, employees and point-of-sale systems.</li>
-                                <li>Encrypted remote access for traveling team members and branch offices.</li>
-                                <li>Ongoing performance monitoring.</li>
-                            </ul>
-                        </div>
-
-                        <div class="estate-pillar-item">
-                            <h3>Security and Compliance</h3>
-                            <ul>
-                                <li>On-site assessments that uncover vulnerabilities and propose practical fixes for your office.</li>
-                                <li>Multi-factor sign-in for user accounts.</li>
-                                <li>Scheduled scans with a clear findings report.</li>
-                                <li>Guidance on meeting industry and regulatory requirements.</li>
-                                <li>Offline backups that help you recover from ransomware.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sustainability-craft">
-            <div class="section-container">
-                <div class="section-header-box">
-                    <img src="computer-repair.png" alt="Computer Repair Icon" style="display: block; margin: 0 auto 25px auto; max-width: 200px; height: auto;">
-                    <h2 class="section-title">Repair & Builds</h2>
-                    <p class="section-subtitle">Fix what is broken, and upgrade what is not.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
-                    <div class="editorial-card" style="border-top-color: var(--border-gold);">
-                        <h3>Repair over Replace</h3>
-                        <ul>
-                            <li>A thorough diagnosis before you spend money.</li>
-                            <li>Upgrades that often cost far less than new hardware.</li>
-                            <li>Less electronic waste in local landfills.</li>
-                            <li>Your files, programs and settings stay right where they are.</li>
-                        </ul>
-                    </div>
-
-                    <div class="editorial-card" style="border-top-color: var(--border-gold);">
-                        <h3>Custom Builds</h3>
-                        <ul>
-                            <li>Desktop computers built without unwanted software.</li>
-                            <li>Systems shaped around your daily workflow.</li>
-                            <li>Handcrafted mechanical keyboards.</li>
-                            <li>The computer your new build replaces can join our donation program.</li>
-                        </ul>
-                    </div>
-
-                    <div class="editorial-card" style="border-top-color: var(--border-gold);">
-                        <h3>Device Donation Program</h3>
-                        <ul>
-                            <li>Replacing a device? Opt in, and we will refurbish your previous computer, tablet or phone.</li>
-                            <li>Every drive is fully wiped, so none of your personal information travels with it.</li>
-                            <li>In partnership with Women's Economic Ventures (WEV), restored equipment goes to local residents who cannot afford new technology.</li>
-                            <li>Your old device avoids the scrap heap, and a neighbor gains the tools to work, learn and stay connected.</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="overview-grid">
+                <a id="estate-services" href="residential.html" class="overview-card">
+                    <img src="homewifi.png" alt="" loading="lazy">
+                    <h3>Residential IT Services</h3>
+                    <p>One-on-one coaching, whole-home Wi-Fi, privacy and everyday support for your household.</p>
+                    <span class="overview-link">See residential services</span>
+                </a>
+                <a id="commercial-services" href="commercial.html" class="overview-card">
+                    <img src="business.png" alt="" loading="lazy">
+                    <h3>Commercial IT Solutions</h3>
+                    <p>Dependable networks, security and day-to-day support for small offices and growing teams.</p>
+                    <span class="overview-link">See commercial services</span>
+                </a>
+                <a id="sustainability-craft" href="repair-builds.html" class="overview-card">
+                    <img src="computer-repair.png" alt="" loading="lazy">
+                    <h3>Repair &amp; Builds</h3>
+                    <p>Thorough repairs, custom computers and a device donation program that keeps technology in use.</p>
+                    <span class="overview-link">See repair and build options</span>
+                </a>
             </div>
         </section>
 
@@ -912,39 +770,6 @@
             </div>
         </section>
 
-        <!-- GEO/AIO Core Question-Answering Optimization Layer -->
-        <section id="faq-section" class="section-container" style="border-top: 1px solid #ECE7E1;">
-            <div class="section-header-box">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px;">
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">What does SB Tech Gal do?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">SB Tech Gal offers computer repair, Wi-Fi design, data backup, security hardening, managed IT and compliance support for homes and small businesses.</p>
-                </article>
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Where do you work?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">We serve clients from Santa Maria to Westlake Village, both in person and remotely.</p>
-                </article>
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Are you certified?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Yes. All work is performed by a technician holding CompTIA Security+, Network+ and A+ credentials.</p>
-                </article>
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">Are you insured?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Yes. SB Tech Gal carries Errors &amp; Omissions (E&amp;O) and Cyber Liability insurance. Certificates of insurance are available on request.</p>
-                </article>
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">What happens to my old devices?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">We securely erase all of your data, refurbish the device, and through our partnership with Women's Economic Ventures (WEV), donate it to a local resident who cannot afford new equipment.</p>
-                </article>
-                <article style="background: var(--montecito-sand); padding: 30px; border-left: 3px solid var(--sea-glass);">
-                    <h3 style="font-family: var(--serif-font); font-size: 22px; margin-bottom: 10px; font-weight: 600;">How do I get started?</h3>
-                    <p style="font-size: 15px; color: #4A5568; font-weight: 300;">Call (805) 225-7885, email Maggie@thesbtechgal.com, or use the form above. You will receive a detailed quote up front.</p>
-                </article>
-            </div>
-        </section>
     </main>
 
    <footer>
@@ -954,6 +779,7 @@
             <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
             <span style="color: var(--border-gold);">Ventura County and Westlake:</span> Ventura, Oxnard, Camarillo, Ojai, Thousand Oaks, Westlake Village
         </p>
+        <p class="footer-links" style="margin-top: 12px;"><a href="faq.html" style="color: inherit;">Frequently Asked Questions</a></p>
     </footer>
 
     <script>
