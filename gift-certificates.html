@@ -10,9 +10,13 @@
     <meta property="og:url" content="https://thesbtechgal.com/gift-certificates.html">
     <meta property="og:title" content="Gift Certificates | SB Tech Gal">
     <meta property="og:description" content="Give the gift of tech support.">
-    <meta property="og:image" content="https://thesbtechgal.com/LOGO.png">
+    <meta property="og:image" content="https://thesbtechgal.com/img/share-1200x630.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <link rel="icon" type="image/png" href="LOGO.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -150,6 +154,20 @@
             .main-wrap { padding: 44px 20px 60px; }
             .panel { padding: 28px 20px; }
         }
+        /* Brand header and footer, matching the rest of the site */
+        .logo-mark { display: inline-flex; align-items: center; gap: 14px; }
+        .logo-mark img { display: block; width: 72px; height: 72px; }
+        .logo-mark .logo-text { font-family: var(--serif-font); font-size: 30px; font-weight: 600; color: #0A0D5E; letter-spacing: 0.5px; white-space: nowrap; }
+        @media (max-width: 768px) {
+            .logo-mark { gap: 10px; }
+            .logo-mark img { width: 52px; height: 52px; }
+            .logo-mark .logo-text { font-size: 24px; }
+        }
+        :root { --brand-navy: #0A0D5E; }
+        h1, h2, h3 { color: var(--brand-navy); }
+        .cta-btn-nav { border-color: var(--brand-navy) !important; color: var(--brand-navy) !important; }
+        .cta-btn-nav:hover { background-color: var(--brand-navy); color: var(--pure-white) !important; }
+        footer .footer-logo { display: block; width: 96px; height: 96px; margin: 0 auto 18px auto; }
     </style>
 </head>
 <body>
@@ -158,11 +176,11 @@
 
     <header>
         <div class="nav-container">
-            <a href="/" class="logo">Santa Barbara <span>Tech Gal</span></a>
+            <a href="/" class="logo logo-mark" aria-label="SB Tech Gal home"><img src="img/logo-round-240.webp" alt="" width="72" height="72"><span class="logo-text">SB Tech Gal</span></a>
             <nav>
-                <a href="/#estate-services">Residential</a>
-                <a href="/#commercial-services">Commercial</a>
-                <a href="/#sustainability-craft">Repair &amp; Builds</a>
+                <a href="/residential.html">Residential</a>
+                <a href="/commercial.html">Commercial</a>
+                <a href="/repair-builds.html">Repair &amp; Builds</a>
                 <a href="/services.html">Services</a>
                 <a href="/why-sb-tech-gal.html">Why SB Tech Gal</a>
                 <a href="/gift-certificates.html" class="current" aria-current="page">Gift Certificates</a>
@@ -283,7 +301,15 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Santa Barbara Tech Gal. All Rights Reserved.</p>
+        <img src="img/logo-round-240.webp" alt="" width="96" height="96" class="footer-logo" loading="lazy">
+        <p>&copy; 2026 SB Tech Gal. All Rights Reserved. &nbsp;|&nbsp; Fully Insured (E&amp;O and Cyber Liability)</p>
+        <p style="margin-top: 12px;">By appointment: 924 Anacapa St, Suite G1, Santa Barbara, CA 93101</p>
+        <p style="margin-top: 12px; font-size: 11px; opacity: 0.8; line-height: 1.8;">
+            <strong>Our Service Areas:</strong><br>
+            <span style="color: var(--border-gold);">Santa Barbara County:</span> Santa Barbara, Montecito, Goleta, Noleta, Summerland, Carpinteria, Santa Maria<br>
+            <span style="color: var(--border-gold);">Ventura County and Westlake:</span> Ventura, Oxnard, Camarillo, Ojai, Thousand Oaks, Westlake Village
+        </p>
+        <p class="footer-links" style="margin-top: 12px;"><a href="/faq.html" style="color: inherit;">Frequently Asked Questions</a></p>
     </footer>
 
 <script>
