@@ -132,6 +132,25 @@
             margin-bottom: 25px;
         }
 
+        .intro-with-photo {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .headshot {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 4px solid var(--sea-glass);
+        }
+
+        @media (max-width: 768px) {
+            .intro-with-photo { grid-template-columns: 1fr; gap: 30px; }
+            .headshot { max-width: 220px; }
+        }
+
         /* Services Tier Grid Layout */
         .tier-grid {
             display: grid;
@@ -317,9 +336,14 @@
     </header>
 
     <main class="main-content">
-        <div class="intro-box">
-            <h1>Qualified expertise you can trust.</h1>
-            <p>Hello, I am Maggie Williams. I hold three CompTIA certifications and explain everything in plain English along the way.</p>
+        <div class="intro-box intro-with-photo">
+            <img src="maggie-williams.webp" alt="Maggie Williams, founder of SB Tech Gal" width="480" height="690" class="headshot">
+            <div>
+                <h1>Qualified expertise you can trust.</h1>
+                <p>Hello, I am Maggie Williams, founder of SB Tech Gal in Santa Barbara. I hold three CompTIA certifications and explain everything in plain English along the way.</p>
+                <p>My work centers on network setup, security, computer repair, data backup and recovery, and compliance support. I also offer one-on-one coaching for anyone who wants to get more from their technology.</p>
+                <p>Whenever possible, I repair what you already own before recommending anything new.</p>
+            </div>
         </div>
 
         <div class="tier-grid">
@@ -358,7 +382,7 @@
 
         </div>
 
-       <h2 class="credentials-header">Credentials and Insurance</h2>
+       <h2 class="credentials-header">Credentials, Membership and Insurance</h2>
 
 <div class="cert-grid">
     <div class="cert-card">
@@ -372,6 +396,10 @@
     <div class="cert-card">
         <h3>CompTIA A+ Certified</h3>
         <p>Hardware and troubleshooting</p>
+    </div>
+    <div class="cert-card">
+        <h3>NAWBO Member</h3>
+        <p>National Association of Women Business Owners</p>
     </div>
     <div class="cert-card" style="border-left-color: var(--sea-glass);">
         <h3>Commercially Insured</h3>
